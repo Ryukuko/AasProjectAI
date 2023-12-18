@@ -8,8 +8,7 @@
     <div class="float-right d-none d-sm-inline">
         Sistem Pakar Diagnosa Penyakit Paru - Paru
     </div>
-    <strong>Copyright © 2020-2021 <a href="<?php echo
-        base_url('/'); ?>"> SIAK Online</a>.</strong> All rights reserved.
+    <strong>Copyright © 2023-2099 <a href="#"> SIKARPAR</a>.</strong> All rights reserved.
 </footer>
 </div>
 <script src="<?php echo base_url('asset/plugins'); ?>
