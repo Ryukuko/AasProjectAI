@@ -53,9 +53,24 @@
                                             <th>Kode Penyakit</th>
                                             <th>Nama Penyakit</th>
                                             <th>Solusi</th>
+                                            <th>Aksi</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                            <td>1</td>
+                                            <td>KD005</td>
+                                            <td>Bronkitis</td>
+                                            <td>Disarankan untuk istirahat total, minum banyak cairan, dan menggunakan obat pereda gejala seperti parasetamol atau ibuprofen. Inhalasi uap air panas atau penggunaan humidifier juga dapat membantu melunakkan lendir. Penting untuk menghindari asap rokok dan zat pemicu lainnya serta mempertimbangkan antibiotik jika disarankan oleh dokter. </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="" class="btn btn-sm btn-success">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                    <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data penyakit ini?');">
+                                                        <i class="fa fa-trash-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
 <!--                                        --><?php //foreach($penyakit as $key => $row){ ?>
 <!--                                            <tr>-->
 <!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->

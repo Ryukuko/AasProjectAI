@@ -53,9 +53,24 @@
                                             <th>Kode Penyakit</th>
                                             <th>Kode Gejala</th>
                                             <th>CF Pakar</th>
+                                            <th>Aksi</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <td>1</td>
+                                        <td>KD005</td>
+                                        <td>KD006</td>
+                                        <td>0.8</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="" class="btn btn-sm btn-success">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data rule ini?');">
+                                                    <i class="fa fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </td>
                                         <!--                                        --><?php //foreach($penyakit as $key => $row){ ?>
                                         <!--                                            <tr>-->
                                         <!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->

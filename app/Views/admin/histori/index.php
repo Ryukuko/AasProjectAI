@@ -53,9 +53,22 @@
                                             <th>Nama Penyakit</th>
                                             <th>Presentase</th>
                                             <th>Tanggal</th>
+                                            <th>Aksi</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <td>1</td>
+                                        <td>UserPertama</td>
+                                        <td>Bronkitis</td>
+                                        <td>80%</td>
+                                        <td>2023-12-18</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data histori ini?');">
+                                                    <i class="fa fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </td>
                                         <!--                                        --><?php //foreach($penyakit as $key => $row){ ?>
                                         <!--                                            <tr>-->
                                         <!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->

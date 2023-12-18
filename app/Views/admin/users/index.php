@@ -51,9 +51,22 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Username</th>
+                                            <th>Aksi</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <td>1</td>
+                                        <td>UserPertama</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="" class="btn btn-sm btn-success">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data user ini?');">
+                                                    <i class="fa fa-trash-alt"></i>
+                                                </a>
+                                            </div>
+                                        </td>
                                         <!--                                        --><?php //foreach($penyakit as $key => $row){ ?>
                                         <!--                                            <tr>-->
                                         <!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->
