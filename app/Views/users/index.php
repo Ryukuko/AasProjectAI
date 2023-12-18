@@ -23,6 +23,7 @@
                         <div class="card">
                             <div class="card-header">
                                 Daftar Users
+                                <a href="#" class="btn btn-primary float-right">Tambah</a>
                             </div>
 
                             <div class="card-body">
