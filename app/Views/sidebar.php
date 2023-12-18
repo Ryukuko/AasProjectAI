@@ -53,7 +53,7 @@
                 <li class="nav-header">ACCOUNT</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-circle text-danger"></i>
+                        <i class="nav-icon fas fa-door-open text-danger"></i>
                         <p class="text">Logout</p>
                     </a>
                 </li>
