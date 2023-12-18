@@ -27,9 +27,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url()."gejala"?>" class="nav-link">
                         <i class="nav-icon fas fa-stethoscope"></i>
-                        <p>Diagnosa</p>
+                        <p>Gejala</p>
                     </a>
                 </li>
                 <li class="nav-item">

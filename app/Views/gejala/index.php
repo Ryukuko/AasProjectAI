@@ -50,6 +50,7 @@
                                         <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Kode Gejala</th>
                                             <th>Gejala</th>
                                         </tr>
                                         </thead>

@@ -50,6 +50,7 @@
                                         <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Kode Penyakit</th>
                                             <th>Nama Penyakit</th>
                                             <th>Solusi</th>
                                         </tr>
