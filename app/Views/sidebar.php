@@ -39,13 +39,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url()."histori"?>" class="nav-link">
                         <i class="nav-icon fas fa-history"></i>
                         <p>Histori</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url()."users"?>" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Users</p>
                     </a>

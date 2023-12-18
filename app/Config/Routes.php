@@ -11,3 +11,4 @@ $routes->get('penyakit', 'Penyakit::index');
 $routes->get('gejala', 'Gejala::index');
 $routes->get('rules', 'Rules::index');
 $routes->get('histori', 'Histori::index');
+$routes->get('users', 'Users::index');
