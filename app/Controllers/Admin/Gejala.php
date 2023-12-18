@@ -15,4 +15,8 @@ class Gejala extends BaseController
     {
         echo view('admin/gejala/index');
     }
+    public function create()
+    {
+        echo view('admin/gejala/create');
+    }
 }

@@ -1,5 +1,5 @@
 <?php echo view('admin/header'); ?>
-<?php echo view('admin/sidebar'); ?>s
+<?php echo view('admin/sidebar'); ?>
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -23,7 +23,7 @@
                         <div class="card">
                             <div class="card-header">
                                 Daftar Gejala
-                                <a href="#" class="btn btn-primary float-right">Tambah</a>
+                                <a href="<?=base_url().'admin/gejala/create'?>" class="btn btn-primary float-right">Tambah</a>
                             </div>
 
                             <div class="card-body">

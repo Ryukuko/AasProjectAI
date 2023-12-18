@@ -23,7 +23,7 @@
                         <div class="card">
                             <div class="card-header">
                                 Daftar Penyakit
-                                <a href="#" class="btn btn-primary float-right">Tambah</a>
+                                <a href="<?=base_url().'admin/penyakit/create'?>" class="btn btn-primary float-right">Tambah</a>
                             </div>
 
                             <div class="card-body">

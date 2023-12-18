@@ -15,4 +15,7 @@ class Users extends BaseController
     {
         echo view('admin/users/index');
     }
+    public function create(){
+        echo view('admin/users/create');
+    }
 }

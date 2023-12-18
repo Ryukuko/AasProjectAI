@@ -15,4 +15,8 @@ class Penyakit extends BaseController
     {
         echo view('admin/penyakit/index');
     }
+    public function create()
+    {
+        echo view('admin/penyakit/create');
+    }
 }
