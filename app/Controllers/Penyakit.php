@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 //use namespace model
-class Dashboard extends BaseController
+class Penyakit extends BaseController
 {
     public function __construct()
     {
@@ -11,6 +11,6 @@ class Dashboard extends BaseController
     }
     public function index()
     {
-        echo view('dashboard');
+        echo view('penyakit/index');
     }
 }
