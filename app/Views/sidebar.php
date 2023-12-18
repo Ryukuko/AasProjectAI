@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?=base_url()."rules"?>" class="nav-link">
                         <i class="nav-icon fas fa-user-md"></i>
                         <p>Rules</p>
                     </a>
