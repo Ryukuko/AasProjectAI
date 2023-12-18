@@ -16,3 +16,4 @@ $routes->get('admin/users', 'Admin\Users::index');
 $routes->get('admin/gejala/create', 'Admin\Gejala::create');
 $routes->get('admin/penyakit/create', 'Admin\Penyakit::create');
 $routes->get('admin/users/create', 'Admin\Users::create');
+$routes->get('admin/rules/create', 'Admin\Rules::create');

@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="icon" href="<?php echo base_url('asset/dist');?>/img/sikarpar.svg">
+    <link rel="icon" href="<?php echo base_url('asset/dist');?>/img/sikarpar.svg" >
     <title>SIKARPAR</title>
     <style type="text/css" id="debugbar_dynamic_style"></style>
     <link rel="stylesheet" href="<?php echo base_url('asset/dist'); ?>

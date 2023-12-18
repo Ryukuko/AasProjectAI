@@ -23,7 +23,7 @@
                         <div class="card">
                             <div class="card-header">
                                 Daftar Rules
-                                <a href="#" class="btn btn-primary float-right">Tambah</a>
+                                <a href="<?=base_url().'admin/rules/create'?>" class="btn btn-primary float-right">Tambah</a>
                             </div>
 
                             <div class="card-body">

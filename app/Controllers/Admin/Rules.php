@@ -17,4 +17,8 @@ class Rules extends BaseController
     {
         echo view('admin/rules/index');
     }
+    public function create()
+    {
+        echo view('admin/rules/create');
+    }
 }
