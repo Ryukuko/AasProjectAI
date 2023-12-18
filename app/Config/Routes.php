@@ -10,3 +10,4 @@ $routes->get('dashboard', 'Dashboard::index');
 $routes->get('penyakit', 'Penyakit::index');
 $routes->get('gejala', 'Gejala::index');
 $routes->get('rules', 'Rules::index');
+$routes->get('histori', 'Histori::index');
