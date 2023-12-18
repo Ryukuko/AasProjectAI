@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 //use namespace model
-class Penyakit extends BaseController
+use App\Controllers\BaseController;
+
+class Users extends BaseController
 {
     public function __construct()
     {
@@ -11,6 +13,6 @@ class Penyakit extends BaseController
     }
     public function index()
     {
-        echo view('penyakit/index');
+        echo view('admin/users/index');
     }
 }

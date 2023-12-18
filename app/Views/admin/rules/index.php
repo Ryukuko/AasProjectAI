@@ -1,16 +1,16 @@
-<?php echo view('header'); ?>
-<?php echo view('sidebar'); ?>
+<?php echo view('admin/header'); ?>
+<?php echo view('admin/sidebar'); ?>
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Data Gejala</h1>
+                        <h1 class="m-0 text-dark">Data Rules</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Gejala</li>
+                            <li class="breadcrumb-item active">Rules</li>
                         </ol>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                Daftar Gejala
+                                Daftar Rules
                                 <a href="#" class="btn btn-primary float-right">Tambah</a>
                             </div>
 
@@ -50,8 +50,9 @@
                                         <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Kode Penyakit</th>
                                             <th>Kode Gejala</th>
-                                            <th>Gejala</th>
+                                            <th>CF Pakar</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -59,6 +60,7 @@
                                         <!--                                            <tr>-->
                                         <!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->
                                         <!--                                                <td>--><?php //echo $row['nama']; ?><!--</td>-->
+                                        <!--                                                <td>--><?php //echo $row['solusi']; ?><!--</td>-->
                                         <!--                                                <td>-->
                                         <!--                                                    <div class="btn-group">-->
                                         <!--                                                        <a href="--><?php //echo base_url('penyakit/edit/'.$row['id']);
@@ -83,4 +85,4 @@
             </div>
         </div>
     </div>
-<?php echo view('footer'); ?>
+<?php echo view('admin/footer'); ?>

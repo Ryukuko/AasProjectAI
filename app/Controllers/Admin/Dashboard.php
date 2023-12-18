@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 //use namespace model
-class Gejala extends BaseController
+use App\Controllers\BaseController;
+
+class Dashboard extends BaseController
 {
     public function __construct()
     {
@@ -11,6 +13,6 @@ class Gejala extends BaseController
     }
     public function index()
     {
-        echo view('gejala/index');
+        echo view('admin/dashboard');
     }
 }

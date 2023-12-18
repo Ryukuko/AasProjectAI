@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 //use namespace model
-class Histori extends BaseController
+use App\Controllers\BaseController;
+
+class Gejala extends BaseController
 {
     public function __construct()
     {
@@ -11,6 +13,6 @@ class Histori extends BaseController
     }
     public function index()
     {
-        echo view('histori/index');
+        echo view('admin/gejala/index');
     }
 }

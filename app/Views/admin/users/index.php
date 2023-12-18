@@ -1,5 +1,5 @@
-<?php echo view('header'); ?>
-<?php echo view('sidebar'); ?>
+<?php echo view('admin/header'); ?>
+<?php echo view('admin/sidebar'); ?>
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -83,4 +83,4 @@
             </div>
         </div>
     </div>
-<?php echo view('footer'); ?>
+<?php echo view('admin/footer'); ?>

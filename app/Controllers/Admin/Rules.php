@@ -1,8 +1,10 @@
 <?php
 
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 //use namespace model
+use App\Controllers\BaseController;
+
 class Rules extends BaseController
 {
     public function __construct()
@@ -13,6 +15,6 @@ class Rules extends BaseController
 
     public function index()
     {
-        echo view('rules/index');
+        echo view('admin/rules/index');
     }
 }

@@ -6,9 +6,9 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('dashboard', 'Dashboard::index');
-$routes->get('penyakit', 'Penyakit::index');
-$routes->get('gejala', 'Gejala::index');
-$routes->get('rules', 'Rules::index');
-$routes->get('histori', 'Histori::index');
-$routes->get('users', 'Users::index');
+$routes->get('admin/dashboard', 'Admin\Dashboard::index');
+$routes->get('admin/penyakit', 'Admin\Penyakit::index');
+$routes->get('admin/gejala', 'Admin\Gejala::index');
+$routes->get('admin/rules', 'Admin\Rules::index');
+$routes->get('admin/histori', 'Admin\Histori::index');
+$routes->get('admin/users', 'Admin\Users::index');

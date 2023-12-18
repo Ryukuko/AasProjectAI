@@ -1,6 +1,6 @@
 <?php
-echo view('header');
-echo view('sidebar');
+echo view('admin/header');
+echo view('admin/sidebar');
 ?>
 <div class="content-wrapper">
     <div class="content-header">
@@ -71,5 +71,5 @@ echo view('sidebar');
     </div>
 </div>
 <?php
-    echo view('footer');
+    echo view('admin/footer');
 ?>

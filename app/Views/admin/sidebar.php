@@ -15,37 +15,37 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="<?=base_url()."dashboard"?>" class="nav-link">
+                    <a href="<?=base_url()."admin/dashboard"?>" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url()."penyakit"?>" class="nav-link">
+                    <a href="<?= base_url() . "admin/penyakit" ?>" class="nav-link">
                         <i class="nav-icon fas fa-virus"></i>
                         <p>Penyakit</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url()."gejala"?>" class="nav-link">
+                    <a href="<?= base_url() . "admin/gejala" ?>" class="nav-link">
                         <i class="nav-icon fas fa-stethoscope"></i>
                         <p>Gejala</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url()."rules"?>" class="nav-link">
+                    <a href="<?= base_url() . "admin/rules" ?>" class="nav-link">
                         <i class="nav-icon fas fa-user-md"></i>
                         <p>Rules</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url()."histori"?>" class="nav-link">
+                    <a href="<?= base_url() . "admin/histori" ?>" class="nav-link">
                         <i class="nav-icon fas fa-history"></i>
                         <p>Histori</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=base_url()."users"?>" class="nav-link">
+                    <a href="<?= base_url() . "admin/users" ?>" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Users</p>
                     </a>
