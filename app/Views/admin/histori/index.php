@@ -50,6 +50,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Username</th>
+                                            <th>Gejala</th>
                                             <th>Nama Penyakit</th>
                                             <th>Presentase</th>
                                             <th>Tanggal</th>
@@ -59,6 +60,10 @@
                                         <tbody>
                                         <td>1</td>
                                         <td>UserPertama</td>
+                                        <th>
+                                                <li>Batuk Berdahak</li>
+                                                <li>Sesak Napas</li>
+                                        </th>
                                         <td>Bronkitis</td>
                                         <td>80%</td>
                                         <td>2023-12-18</td>

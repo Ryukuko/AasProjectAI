@@ -57,39 +57,26 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            <td>1</td>
-                                            <td>KD005</td>
-                                            <td>Bronkitis</td>
-                                            <td>Disarankan untuk istirahat total, minum banyak cairan, dan menggunakan obat pereda gejala seperti parasetamol atau ibuprofen. Inhalasi uap air panas atau penggunaan humidifier juga dapat membantu melunakkan lendir. Penting untuk menghindari asap rokok dan zat pemicu lainnya serta mempertimbangkan antibiotik jika disarankan oleh dokter. </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="" class="btn btn-sm btn-success">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
-                                                    <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data penyakit ini?');">
-                                                        <i class="fa fa-trash-alt"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-<!--                                        --><?php //foreach($penyakit as $key => $row){ ?>
-<!--                                            <tr>-->
-<!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->
-<!--                                                <td>--><?php //echo $row['nama']; ?><!--</td>-->
-<!--                                                <td>--><?php //echo $row['solusi']; ?><!--</td>-->
-<!--                                                <td>-->
-<!--                                                    <div class="btn-group">-->
-<!--                                                        <a href="--><?php //echo base_url('penyakit/edit/'.$row['id']);
-//                                                        ?><!--" class="btn btn-sm btn-success">-->
-<!--                                                            <i class="fa fa-edit"></i>-->
-<!--                                                        </a>-->
-<!--                                                        <a href="--><?php //echo base_url('penyakit/delete/'.$row['id']);
-//                                                        ?><!--" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data Fakultas ini?');">-->
-<!--                                                            <i class="fa fa-trash-alt"></i>-->
-<!--                                                        </a>-->
-<!--                                                    </div>-->
-<!--                                                </td>-->
-<!--                                            </tr>-->
-<!--                                        --><?php //} ?>
+                                        <?php foreach($penyakit as $key => $value){ ?>
+                                            <tr>
+                                                <td><?= $key + 1 ?></td>
+                                                <td><?= $value['kode_penyakit'] ?></td>
+                                                <td><?= $value['nama_penyakit'] ?></td>
+                                                <td><?= $value['solusi'] ?></td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="<?= base_url('admin/penyakit/edit/'.$value['id']);
+                                                        ?>" class="btn btn-sm btn-success">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+                                                        <a href="<?= base_url('admin/penyakit/delete/'.$value['id']);
+                                                        ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data penyakit ini?');">
+                                                            <i class="fa fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

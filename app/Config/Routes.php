@@ -19,3 +19,10 @@ $routes->get('admin/penyakit/create', 'Admin\Penyakit::create');
 $routes->get('admin/users/create', 'Admin\Users::create');
 $routes->get('admin/rules/create', 'Admin\Rules::create');
 
+$routes->get('admin/penyakit/edit/(:num)', 'Admin\Penyakit::edit/$1');
+$routes->get('admin/penyakit/delete/(:num)', 'Admin\Penyakit::delete/$1');
+
+
+
+$routes->post('admin/penyakit/add', 'Admin\Penyakit::add');
+$routes->post('admin/penyakit/update', 'Admin\Penyakit::update');
