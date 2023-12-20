@@ -89,7 +89,7 @@ class Gejala extends BaseController
         $customError = [
             'id' => [
                 'is_not_unique' => 'ID penyakit tidak valid.',
-                'is_unique' => 'Penyakit ini masih dipakai untuk entitas lain.',
+                'is_unique' => 'Gejala ini masih dipakai untuk entitas lain.',
             ],
         ];
         $this->validation->setRules($gejalaValidation,$customError);
