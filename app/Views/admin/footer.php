@@ -19,7 +19,10 @@
 /js/adminlte.min.js"></script>
 <script>
     $(document).ready(function() {
-        let table = new DataTable('#tabel');
+        let table = new DataTable('#tabel', {
+            lengthMenu: [[5, 10, 15], [5, 10, 15]],
+            pageLength: 10
+        });
     });
 </script>
 </body>
