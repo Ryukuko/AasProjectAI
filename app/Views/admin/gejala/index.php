@@ -25,7 +25,18 @@
                                 Daftar Gejala
                                 <a href="<?=base_url().'admin/gejala/create'?>" class="btn btn-primary float-right">Tambah</a>
                             </div>
-
+                            <?php
+                            $errors = session()->getFlashdata('errors');
+                            if(!empty($errors)){ ?>
+                                <div class="alert alert-danger" role="alert" style="margin:10px">
+                                    Walaw E! There was an error in the data delete :
+                                    <ul>
+                                        <li>
+                                            <?=$errors['id']?>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php } ?>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table id="tabel" class="table table-bordered table-hover">

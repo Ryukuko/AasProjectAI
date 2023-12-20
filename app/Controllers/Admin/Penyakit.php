@@ -42,7 +42,6 @@ class Penyakit extends BaseController
         ];
         $this->validation->setRules($penyakitValidation);
         if (!$this->validation->run($data)) {
-            session()->setFlashdata('inputs', $this->request->getPost());
             session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/penyakit/create'));
         } else {
@@ -80,7 +79,6 @@ class Penyakit extends BaseController
         ];
         $this->validation->setRules($penyakitValidation);
         if (!$this->validation->run($data)) {
-            session()->setFlashdata('inputs', $this->request->getPost());
             session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/penyakit/edit/' . $data['id']));
         } else {
@@ -95,10 +93,17 @@ class Penyakit extends BaseController
             'id' => $id
         );
         $penyakitValidation = [
-            'id' => ['label' => 'ID','rules'=>'trim|required|is_not_unique[penyakit.id]']
+            'id' => ['label' => 'ID','rules'=>'trim|required|is_not_unique[penyakit.id]|is_unique[rule.penyakit_id]|is_unique[history.id_penyakit]']
         ];
-        $this->validation->setRules($penyakitValidation);
+        $customError = [
+            'id' => [
+                'is_not_unique' => 'ID penyakit tidak valid.',
+                'is_unique' => 'Penyakit ini masih dipakai untuk entitas lain.',
+            ],
+        ];
+        $this->validation->setRules($penyakitValidation,$customError);
         if (!$this->validation->run($data)) {
+            session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/penyakit'));
         } else {
             $this->penyakitModel->deleteData($data['id']);

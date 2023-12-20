@@ -20,11 +20,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="<?=base_url().'admin/users/add'?>" method="post">
+                    <form action="<?=base_url().'admin/penyakit/add'?>" method="post">
                         <div class="card">
                             <div class="card-body">
                                 <?php
-                                $inputs = session()->getFlashdata('inputs');
                                 $errors = session()->getFlashdata('errors');
                                 if(!empty($errors)){ ?>
                                     <div class="alert alert-danger" role="alert">

@@ -84,10 +84,17 @@ class Gejala extends BaseController
             'id' => $id
         );
         $gejalaValidation = [
-            'id' => ['label' => 'ID','rules'=>'trim|required|is_not_unique[gejala.id]']
+            'id' => ['label' => 'ID','rules'=>'trim|required|is_not_unique[gejala.id]|is_unique[rule.gejala_id]']
         ];
-        $this->validation->setRules($gejalaValidation);
+        $customError = [
+            'id' => [
+                'is_not_unique' => 'ID penyakit tidak valid.',
+                'is_unique' => 'Penyakit ini masih dipakai untuk entitas lain.',
+            ],
+        ];
+        $this->validation->setRules($gejalaValidation,$customError);
         if (!$this->validation->run($data)) {
+            session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/gejala'));
         } else {
             $this->gejalaModel->deleteData($data['id']);
