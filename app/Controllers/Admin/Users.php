@@ -35,7 +35,6 @@ class Users extends BaseController
         ];
         $this->validation->setRules($usersValidation);
         if (!$this->validation->run($data)) {
-            session()->setFlashdata('inputs', $this->request->getPost());
             session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/users/create'));
         } else {
@@ -71,7 +70,6 @@ class Users extends BaseController
         ];
         $this->validation->setRules($usersValidation);
         if (!$this->validation->run($data)) {
-            session()->setFlashdata('inputs', $this->request->getPost());
             session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/users/edit/' . $data['id']));
         } else {

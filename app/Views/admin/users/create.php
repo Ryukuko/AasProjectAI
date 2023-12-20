@@ -24,7 +24,6 @@
                         <div class="card">
                             <div class="card-body">
                                 <?php
-                                $inputs = session()->getFlashdata('inputs');
                                 $errors = session()->getFlashdata('errors');
                                 if(!empty($errors)){ ?>
                                     <div class="alert alert-danger" role="alert">
