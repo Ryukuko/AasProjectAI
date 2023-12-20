@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Create Penyakit</h1>
+                    <h1 class="m-0 text-dark">Edit User</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Create Penyakit</li>
+                        <li class="breadcrumb-item active">Edit User</li>
                     </ol>
                 </div>
             </div>
@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="<?=base_url().'admin/users/add'?>" method="post">
+                    <form action="<?=base_url().'admin/users/update'?>" method="post">
                         <div class="card">
                             <div class="card-body">
                                 <?php
@@ -37,20 +37,18 @@
                                     </div>
                                 <?php } ?>
                                 <div class="form-group">
-                                    <label for="">Kode Penyakit</label>
-                                    <input type="text" class="form-control" name="kode_penyakit" placeholder="Enter kode penyakit" >
+                                    <label for="">Username</label>
+                                    <input type="hidden" name="id" value="<?=$users['id']?>">
+                                    <input type="text" class="form-control" name="username" value="<?=$users['username']?>" placeholder="Enter username" >
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Nama Penyakit</label>
-                                    <input type="text" class="form-control" name="nama_penyakit" placeholder="Enter nama penyakit" >
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Solusi</label>
-                                    <textarea rows="5" class="form-control" name="solusi" placeholder="Enter solusi"></textarea>
+                                    <label for="">Password</label>
+                                    <input type="text" class="form-control" name="password" placeholder="Enter password" >
+                                    <small class="form-text text-muted">*Kosongkan jika tidak ingin mengganti password</small>
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <a href="<?=base_url().'admin/penyakit'?>" class="btn btn-outline-info">Back</a>
+                                <a href="<?=base_url().'admin/users'?>" class="btn btn-outline-info">Back</a>
                                 <button type="submit" class="btn btn-primary float-right">Simpan</button>
                             </div>
                         </div>

@@ -28,6 +28,10 @@ $routes->get('admin/histori/delete/(:num)', 'Admin\Histori::delete/$1');
 
 $routes->get('admin/users', 'Admin\Users::index');
 $routes->get('admin/users/create', 'Admin\Users::create');
+$routes->post('admin/users/add', 'Admin\Users::add');
+$routes->post('admin/users/update', 'Admin\Users::update');
+$routes->get('admin/users/edit/(:num)', 'Admin\Users::edit/$1');
+$routes->get('admin/users/delete/(:num)', 'Admin\Users::delete/$1');
 
 $routes->get('admin/rules', 'Admin\Rules::index');
 $routes->get('admin/rules/create', 'Admin\Rules::create');

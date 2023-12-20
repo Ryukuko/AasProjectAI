@@ -23,21 +23,19 @@
                     <form action="<?=base_url().'admin/users/add'?>" method="post">
                         <div class="card">
                             <div class="card-body">
-                                <!--                                --><?php
-                                //                                $inputs = session()->getFlashdata('inputs');
-                                //                                $errors = session()->getFlashdata('errors');
-                                //                                if(!empty($errors)){ ?>
-                                <!--                                    <div class="alert alert-danger" role="alert">-->
-                                <!--                                        Whoops! Ada kesalahan saat input data, yaitu:-->
-                                <!---->
-                                <!--                                        <ul>-->
-                                <!--                                            --><?php //foreach ($errors as $error) : ?>
-                                <!--                                                <li>--><?php //= esc($error) ?><!--</li>-->
-                                <!--                                            --><?php //endforeach ?>
-                                <!--                                        </ul>-->
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-
+                                <?php
+                                $inputs = session()->getFlashdata('inputs');
+                                $errors = session()->getFlashdata('errors');
+                                if(!empty($errors)){ ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        Walaw E! There was an error in the data input :
+                                        <ul>
+                                            <?php foreach ($errors as $error) : ?>
+                                                <li><?= esc($error) ?></li>
+                                            <?php endforeach ?>
+                                        </ul>
+                                    </div>
+                                <?php } ?>
                                 <div class="form-group">
                                     <label for="">Username</label>
                                     <input type="text" class="form-control" name="username" placeholder="Enter username" >
