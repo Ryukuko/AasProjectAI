@@ -17,5 +17,10 @@
 /bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?php echo base_url('asset/dist'); ?>
 /js/adminlte.min.js"></script>
+<script>
+    $(document).ready(function() {
+        let table = new DataTable('#tabel');
+    });
+</script>
 </body>
 </html>

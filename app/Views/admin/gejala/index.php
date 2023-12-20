@@ -27,26 +27,8 @@
                             </div>
 
                             <div class="card-body">
-                                <!--                                --><?php
-                                //                                if(!empty(session()->getFlashdata('success'))){ ?>
-                                <!--                                    <div class="alert alert-success">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('success');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-                                <!---->
-                                <!--                                --><?php //if(!empty(session()->getFlashdata('info'))){ ?>
-                                <!--                                    <div class="alert alert-info">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('info');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-                                <!--                                --><?php //if(!empty(session()->getFlashdata('warning'))){ ?>
-                                <!--                                    <div class="alert alert-warning">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('warning');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hovered">
+                                    <table id="tabel" class="table table-bordered table-hover">
                                         <thead>
                                         <tr>
                                             <th>No</th>
@@ -55,38 +37,25 @@
                                             <th>Aksi</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <td>1</td>
-                                        <td>KD006</td>
-                                        <td>Terasa nyeri pada bagian dada</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <a href="" class="btn btn-sm btn-success">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data gejala ini?');">
-                                                    <i class="fa fa-trash-alt"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <!--                                        --><?php //foreach($penyakit as $key => $row){ ?>
-                                        <!--                                            <tr>-->
-                                        <!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->
-                                        <!--                                                <td>--><?php //echo $row['nama']; ?><!--</td>-->
-                                        <!--                                                <td>-->
-                                        <!--                                                    <div class="btn-group">-->
-                                        <!--                                                        <a href="--><?php //echo base_url('penyakit/edit/'.$row['id']);
-                                        //                                                        ?><!--" class="btn btn-sm btn-success">-->
-                                        <!--                                                            <i class="fa fa-edit"></i>-->
-                                        <!--                                                        </a>-->
-                                        <!--                                                        <a href="--><?php //echo base_url('penyakit/delete/'.$row['id']);
-                                        //                                                        ?><!--" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data Fakultas ini?');">-->
-                                        <!--                                                            <i class="fa fa-trash-alt"></i>-->
-                                        <!--                                                        </a>-->
-                                        <!--                                                    </div>-->
-                                        <!--                                                </td>-->
-                                        <!--                                            </tr>-->
-                                        <!--                                        --><?php //} ?>
+                                        <?php foreach($gejala as $key => $value){ ?>
+                                            <tr>
+                                                <td><?= $key + 1 ?></td>
+                                                <td><?= $value['kode_gejala'] ?></td>
+                                                <td><?= $value['nama_gejala'] ?></td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="<?= base_url('admin/gejala/edit/'.$value['id']);
+                                                        ?>" class="btn btn-sm btn-success">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+                                                        <a href="<?= base_url('admin/gejala/delete/'.$value['id']);
+                                                        ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data gejala ini?');">
+                                                            <i class="fa fa-trash-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -97,4 +66,5 @@
             </div>
         </div>
     </div>
+
 <?php echo view('admin/footer'); ?>

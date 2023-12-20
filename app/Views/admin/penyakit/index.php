@@ -27,26 +27,8 @@
                             </div>
 
                             <div class="card-body">
-<!--                                --><?php
-//                                if(!empty(session()->getFlashdata('success'))){ ?>
-<!--                                    <div class="alert alert-success">-->
-<!--                                        --><?php //echo session()->getFlashdata('success');?>
-<!--                                    </div>-->
-<!--                                --><?php //} ?>
-<!---->
-<!--                                --><?php //if(!empty(session()->getFlashdata('info'))){ ?>
-<!--                                    <div class="alert alert-info">-->
-<!--                                        --><?php //echo session()->getFlashdata('info');?>
-<!--                                    </div>-->
-<!--                                --><?php //} ?>
-<!--                                --><?php //if(!empty(session()->getFlashdata('warning'))){ ?>
-<!--                                    <div class="alert alert-warning">-->
-<!--                                        --><?php //echo session()->getFlashdata('warning');?>
-<!--                                    </div>-->
-<!--                                --><?php //} ?>
-
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hovered">
+                                    <table id="tabel" class="table table-bordered table-hovered">
                                         <thead>
                                         <tr>
                                             <th>No</th>

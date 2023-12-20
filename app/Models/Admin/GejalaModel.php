@@ -2,9 +2,9 @@
 namespace App\Models\Admin;
 use CodeIgniter\Model;
 
-class PenyakitModel extends Model
+class GejalaModel extends Model
 {
-    protected $table = 'penyakit';
+    protected $table = 'gejala';
     protected $protectFields = false;
     public function get($id = false)
     {
