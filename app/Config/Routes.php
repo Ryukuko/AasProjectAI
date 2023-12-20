@@ -24,6 +24,7 @@ $routes->get('admin/gejala/edit/(:num)', 'Admin\Gejala::edit/$1');
 $routes->get('admin/gejala/delete/(:num)', 'Admin\Gejala::delete/$1');
 
 $routes->get('admin/histori', 'Admin\Histori::index');
+$routes->get('admin/histori/delete/(:num)', 'Admin\Histori::delete/$1');
 
 $routes->get('admin/users', 'Admin\Users::index');
 $routes->get('admin/users/create', 'Admin\Users::create');

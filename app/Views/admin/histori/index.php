@@ -26,24 +26,6 @@
                             </div>
 
                             <div class="card-body">
-                                <!--                                --><?php
-                                //                                if(!empty(session()->getFlashdata('success'))){ ?>
-                                <!--                                    <div class="alert alert-success">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('success');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-                                <!---->
-                                <!--                                --><?php //if(!empty(session()->getFlashdata('info'))){ ?>
-                                <!--                                    <div class="alert alert-info">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('info');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-                                <!--                                --><?php //if(!empty(session()->getFlashdata('warning'))){ ?>
-                                <!--                                    <div class="alert alert-warning">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('warning');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hovered">
                                         <thead>
@@ -53,46 +35,31 @@
                                             <th>Gejala</th>
                                             <th>Nama Penyakit</th>
                                             <th>Presentase</th>
+                                            <th>Solusi</th>
                                             <th>Tanggal</th>
                                             <th>Aksi</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <td>1</td>
-                                        <td>UserPertama</td>
-                                        <th>
-                                                <li>Batuk Berdahak</li>
-                                                <li>Sesak Napas</li>
-                                        </th>
-                                        <td>Bronkitis</td>
-                                        <td>80%</td>
-                                        <td>2023-12-18</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data histori ini?');">
-                                                    <i class="fa fa-trash-alt"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <!--                                        --><?php //foreach($penyakit as $key => $row){ ?>
-                                        <!--                                            <tr>-->
-                                        <!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->
-                                        <!--                                                <td>--><?php //echo $row['nama']; ?><!--</td>-->
-                                        <!--                                                <td>--><?php //echo $row['solusi']; ?><!--</td>-->
-                                        <!--                                                <td>-->
-                                        <!--                                                    <div class="btn-group">-->
-                                        <!--                                                        <a href="--><?php //echo base_url('penyakit/edit/'.$row['id']);
-                                        //                                                        ?><!--" class="btn btn-sm btn-success">-->
-                                        <!--                                                            <i class="fa fa-edit"></i>-->
-                                        <!--                                                        </a>-->
-                                        <!--                                                        <a href="--><?php //echo base_url('penyakit/delete/'.$row['id']);
-                                        //                                                        ?><!--" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data Fakultas ini?');">-->
-                                        <!--                                                            <i class="fa fa-trash-alt"></i>-->
-                                        <!--                                                        </a>-->
-                                        <!--                                                    </div>-->
-                                        <!--                                                </td>-->
-                                        <!--                                            </tr>-->
-                                        <!--                                        --><?php //} ?>
+                                            <?php foreach($histori as $key => $value){ ?>
+                                                <tr>
+                                                    <td><?php echo $key + 1; ?></td>
+                                                    <td><?php echo $value->username; ?></td>
+                                                    <td><?php echo $value->gejala; ?></td>
+                                                    <td><?php echo $value->nama_penyakit; ?></td>
+                                                    <td><?php echo $value->presentase; ?></td>
+                                                    <td><?php echo $value->solusi; ?></td>
+                                                    <td><?php echo $value->tanggal; ?></td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a href="<?php echo base_url('admin/histori/delete/'.$value->id);
+                                                            ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data histori ini?');">
+                                                                <i class="fa fa-trash-alt"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
