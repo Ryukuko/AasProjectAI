@@ -4,18 +4,31 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\Admin\DashboardModel;
+use App\Libraries\Jwt;
 
 
 class Dashboard extends BaseController
 {
     private $dashobardModel;
+    private $jwt;
 
     public function __construct()
     {
-        //cek login
+        $this->jwt = new Jwt();
+        if (isset($_COOKIE['token'])) {
+            if ($this->jwt->decodeAdmin($_COOKIE['token']) == false) {
+                session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+                header("Location:".base_url('/admin/login'));
+                exit();
+            }
+        } else {
+            session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+            header("Location: ".base_url('/admin/login'));
+            exit();
+        }
         $this->dashobardModel = new DashboardModel();
-    }
 
+    }
     public function index()
     {
         $data['gejala']= $this->dashobardModel->getCount("gejala");

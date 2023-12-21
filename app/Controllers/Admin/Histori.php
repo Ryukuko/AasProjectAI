@@ -3,14 +3,27 @@
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\Admin\HistoriModel;
+use App\Libraries\Jwt;
 
 class Histori extends BaseController
 {
     private $historiModel;
     private $validation;
+    private $jwt;
     public function __construct()
     {
-        //cek login
+        $this->jwt = new Jwt();
+        if (isset($_COOKIE['token'])) {
+            if ($this->jwt->decodeAdmin($_COOKIE['token']) == false) {
+                session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+                header("Location:".base_url('/admin/login'));
+                exit();
+            }
+        } else {
+            session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+            header("Location: ".base_url('/admin/login'));
+            exit();
+        }
         $this->historiModel = new HistoriModel();
         $this->validation = \Config\Services::validation();
     }

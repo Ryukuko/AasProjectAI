@@ -3,14 +3,26 @@
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\Admin\GejalaModel;
-
+use App\Libraries\Jwt;
 class Gejala extends BaseController
 {
     private $gejalaModel;
     private $validation;
+    private $jwt;
     public function __construct()
     {
-        //cek login
+        $this->jwt = new Jwt();
+        if (isset($_COOKIE['token'])) {
+            if ($this->jwt->decodeAdmin($_COOKIE['token']) == false) {
+                session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+                header("Location:".base_url('/admin/login'));
+                exit();
+            }
+        } else {
+            session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+            header("Location: ".base_url('/admin/login'));
+            exit();
+        }
         $this->gejalaModel = new GejalaModel();
         $this->validation = \Config\Services::validation();
     }

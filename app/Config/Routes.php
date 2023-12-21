@@ -5,8 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Admin\Dashboard::index');
-$routes->get('admin/authentication/login', 'Admin\Authentication::login');
+$routes->get('admin/login', 'Admin\Login::index');
+
+$routes->post('admin/authentication/login', 'Admin\Authentication::login');
+
 $routes->get('admin/dashboard', 'Admin\Dashboard::index');
 
 $routes->get('admin/penyakit', 'Admin\Penyakit::index');

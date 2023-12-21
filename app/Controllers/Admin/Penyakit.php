@@ -4,15 +4,28 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\Admin\PenyakitModel;
+use App\Libraries\Jwt;
 
 class Penyakit extends BaseController
 {
     private $penyakitModel;
     private $validation;
+    private $jwt;
 
     public function __construct()
     {
-        //cek login
+        $this->jwt = new Jwt();
+        if (isset($_COOKIE['token'])) {
+            if ($this->jwt->decodeAdmin($_COOKIE['token']) == false) {
+                session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+                header("Location:".base_url('/admin/login'));
+                exit();
+            }
+        } else {
+            session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+            header("Location: ".base_url('/admin/login'));
+            exit();
+        }
         $this->penyakitModel = new PenyakitModel();
         $this->validation = \Config\Services::validation();
     }

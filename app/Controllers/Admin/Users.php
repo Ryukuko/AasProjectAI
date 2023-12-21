@@ -2,16 +2,28 @@
 
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
-use App\Models\Admin\PenyakitModel;
 use App\Models\Admin\UsersModel;
+use App\Libraries\Jwt;
 
 class Users extends BaseController
 {
     private $usersModel;
     private $validation;
+    private $jwt;
     public function __construct()
     {
-        //cek login
+        $this->jwt = new Jwt();
+        if (isset($_COOKIE['token'])) {
+            if ($this->jwt->decodeAdmin($_COOKIE['token']) == false) {
+                session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+                header("Location:".base_url('/admin/login'));
+                exit();
+            }
+        } else {
+            session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+            header("Location: ".base_url('/admin/login'));
+            exit();
+        }
         $this->usersModel = new UsersModel();
         $this->validation = \Config\Services::validation();
     }
@@ -66,7 +78,7 @@ class Users extends BaseController
         }
         $usersValidation = [
             'id' => ['label' => 'ID','rules'=>'trim|required|is_not_unique[user.id]'],
-            'username' => ['label' => 'Kode Penyakit','rules'=>'trim|required|is_unique[user.username,id,{id}]'],
+            'username' => ['label' => 'Username','rules'=>'trim|required|is_unique[user.username,id,{id}]'],
         ];
         $this->validation->setRules($usersValidation);
         if (!$this->validation->run($data)) {

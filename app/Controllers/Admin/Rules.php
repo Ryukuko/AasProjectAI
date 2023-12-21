@@ -2,15 +2,28 @@
 namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\Admin\RulesModel;
+use App\Libraries\Jwt;
 
 class Rules extends BaseController
 {
     private $rulesModel;
     private $validation;
+    private $jwt;
 
     public function __construct()
     {
-        //cek login
+        $this->jwt = new Jwt();
+        if (isset($_COOKIE['token'])) {
+            if ($this->jwt->decodeAdmin($_COOKIE['token']) == false) {
+                session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+                header("Location:".base_url('/admin/login'));
+                exit();
+            }
+        } else {
+            session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');
+            header("Location: ".base_url('/admin/login'));
+            exit();
+        }
         $this->rulesModel = new RulesModel();
         $this->validation = \Config\Services::validation();
     }
