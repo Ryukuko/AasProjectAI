@@ -40,4 +40,9 @@ class Authentication extends BaseController
             return redirect()->to(base_url('/admin/login'));
         }
     }
+    public function logout(){
+        setcookie('token', '', time() - 3600, '/');
+        header("Location: " . base_url('/admin/login'));
+        exit();
+    }
 }

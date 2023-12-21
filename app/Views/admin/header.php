@@ -40,7 +40,7 @@
                     <i class="far fa-user"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <a href="<?php echo base_url('auth/logout'); ?>" class="dropdown-item">
+                    <a href="<?php echo base_url('admin/authentication/logout'); ?>" class="dropdown-item">
                         Logout
                     </a>
                 </div>
