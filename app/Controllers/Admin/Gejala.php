@@ -86,7 +86,7 @@ class Gejala extends BaseController
         ];
         $customError = [
             'id' => [
-                'is_not_unique' => 'ID penyakit tidak valid.',
+                'is_not_unique' => 'ID gejala tidak valid.',
                 'is_unique' => 'Gejala ini masih dipakai untuk entitas lain.',
             ],
         ];

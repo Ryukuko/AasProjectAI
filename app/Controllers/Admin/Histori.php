@@ -29,7 +29,7 @@ class Histori extends BaseController
         ];
         $customError = [
             'id' => [
-                'is_not_unique' => 'ID rules tidak valid.',
+                'is_not_unique' => 'ID histori tidak valid.',
             ],
         ];
         $this->validation->setRules($historiValidation,$customError);

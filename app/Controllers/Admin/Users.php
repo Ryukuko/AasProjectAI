@@ -85,7 +85,7 @@ class Users extends BaseController
         ];
         $customError = [
             'id' => [
-                'is_not_unique' => 'ID rules tidak valid.',
+                'is_not_unique' => 'ID user tidak valid.',
             ]
         ];
         $this->validation->setRules($usersValidation,$customError);
