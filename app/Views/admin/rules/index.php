@@ -25,20 +25,19 @@
                                 Daftar Rules
                                 <a href="<?=base_url().'admin/rules/create'?>" class="btn btn-primary float-right">Tambah</a>
                             </div>
-
+                            <?php
+                            $errors = session()->getFlashdata('errors');
+                            if(!empty($errors)){ ?>
+                                <div class="alert alert-danger" role="alert" style="margin:10px">
+                                    Walaw E! There was an error in the data delete :
+                                    <ul>
+                                        <li>
+                                            <?=$errors['id']?>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php } ?>
                             <div class="card-body">
-                                <?php
-                                $errors = session()->getFlashdata('errors');
-                                if(!empty($errors)){ ?>
-                                    <div class="alert alert-danger" role="alert" style="margin:10px">
-                                        Walaw E! There was an error in the data delete :
-                                        <ul>
-                                            <li>
-                                                <?=$errors['id']?>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                <?php } ?>
                                 <div class="table-responsive" >
                                     <table class="table table-bordered table-hovered" id="tabel">
                                         <thead>

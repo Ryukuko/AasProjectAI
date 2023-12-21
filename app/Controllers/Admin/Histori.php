@@ -27,8 +27,14 @@ class Histori extends BaseController
         $historiValidation = [
             'id' => ['label' => 'ID','rules'=>'trim|required|is_not_unique[history.id]']
         ];
-        $this->validation->setRules($historiValidation);
+        $customError = [
+            'id' => [
+                'is_not_unique' => 'ID rules tidak valid.',
+            ],
+        ];
+        $this->validation->setRules($historiValidation,$customError);
         if (!$this->validation->run($data)) {
+            session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/histori'));
         } else {
             $this->historiModel->deleteData($data['id']);

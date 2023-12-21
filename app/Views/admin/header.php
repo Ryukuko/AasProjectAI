@@ -15,7 +15,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Poppins&family=Varela&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script src=""></script>
@@ -24,8 +23,6 @@
             font-family: Poppins;
         }
     </style>
-
-
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -33,9 +30,8 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#">
-
-                    <i class="fas fa-bars"></i></a>
-
+                    <i class="fas fa-bars"></i>
+                </a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
