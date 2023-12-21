@@ -35,7 +35,6 @@ class Gejala extends BaseController
         ];
         $this->validation->setRules($gejalaValidation);
         if (!$this->validation->run($data)) {
-            session()->setFlashdata('inputs', $this->request->getPost());
             session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/gejala/create'));
         } else {
@@ -69,7 +68,6 @@ class Gejala extends BaseController
         ];
         $this->validation->setRules($gejalaValidation);
         if (!$this->validation->run($data)) {
-            session()->setFlashdata('inputs', $this->request->getPost());
             session()->setFlashdata('errors', $this->validation->getErrors());
             return redirect()->to(base_url('admin/gejala/edit/' . $data['id']));
         } else {

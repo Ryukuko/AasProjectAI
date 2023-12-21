@@ -27,69 +27,54 @@
                             </div>
 
                             <div class="card-body">
-                                <!--                                --><?php
-                                //                                if(!empty(session()->getFlashdata('success'))){ ?>
-                                <!--                                    <div class="alert alert-success">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('success');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-                                <!---->
-                                <!--                                --><?php //if(!empty(session()->getFlashdata('info'))){ ?>
-                                <!--                                    <div class="alert alert-info">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('info');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-                                <!--                                --><?php //if(!empty(session()->getFlashdata('warning'))){ ?>
-                                <!--                                    <div class="alert alert-warning">-->
-                                <!--                                        --><?php //echo session()->getFlashdata('warning');?>
-                                <!--                                    </div>-->
-                                <!--                                --><?php //} ?>
-
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hovered">
+                                <?php
+                                $errors = session()->getFlashdata('errors');
+                                if(!empty($errors)){ ?>
+                                    <div class="alert alert-danger" role="alert" style="margin:10px">
+                                        Walaw E! There was an error in the data delete :
+                                        <ul>
+                                            <li>
+                                                <?=$errors['id']?>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <?php } ?>
+                                <div class="table-responsive" >
+                                    <table class="table table-bordered table-hovered" id="tabel">
                                         <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Kode Penyakit</th>
+                                            <th>Nama Penyakit</th>
                                             <th>Kode Gejala</th>
+                                            <th>Nama Gejala</th>
                                             <th>CF Pakar</th>
                                             <th>Aksi</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <td>1</td>
-                                        <td>KD005</td>
-                                        <td>KD006</td>
-                                        <td>0.8</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <a href="" class="btn btn-sm btn-success">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data rule ini?');">
-                                                    <i class="fa fa-trash-alt"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <!--                                        --><?php //foreach($penyakit as $key => $row){ ?>
-                                        <!--                                            <tr>-->
-                                        <!--                                                <td>--><?php //echo $key + 1; ?><!--</td>-->
-                                        <!--                                                <td>--><?php //echo $row['nama']; ?><!--</td>-->
-                                        <!--                                                <td>--><?php //echo $row['solusi']; ?><!--</td>-->
-                                        <!--                                                <td>-->
-                                        <!--                                                    <div class="btn-group">-->
-                                        <!--                                                        <a href="--><?php //echo base_url('penyakit/edit/'.$row['id']);
-                                        //                                                        ?><!--" class="btn btn-sm btn-success">-->
-                                        <!--                                                            <i class="fa fa-edit"></i>-->
-                                        <!--                                                        </a>-->
-                                        <!--                                                        <a href="--><?php //echo base_url('penyakit/delete/'.$row['id']);
-                                        //                                                        ?><!--" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data Fakultas ini?');">-->
-                                        <!--                                                            <i class="fa fa-trash-alt"></i>-->
-                                        <!--                                                        </a>-->
-                                        <!--                                                    </div>-->
-                                        <!--                                                </td>-->
-                                        <!--                                            </tr>-->
-                                        <!--                                        --><?php //} ?>
+                                            <?php foreach($rules as $key => $value){ ?>
+                                                <tr>
+                                                    <td><?php echo $key + 1; ?></td>
+                                                    <td><?php echo $value->kode_penyakit ?></td>
+                                                    <td><?php echo $value->nama_penyakit ?></td>
+                                                    <td><?php echo $value->kode_gejala ?></td>
+                                                    <td><?php echo $value->nama_gejala ?></td>
+                                                    <td><?php echo $value->cf_pakar ?></td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a href="<?php echo base_url('admin/rules/edit/'.$value->id);
+                                                            ?>" class="btn btn-sm btn-success">
+                                                                <i class="fa fa-edit"></i>
+                                                            </a>
+                                                            <a href="<?php echo base_url('admin/rules/delete/'.$value->id);
+                                                            ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data rule ini?');">
+                                                                <i class="fa fa-trash-alt"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

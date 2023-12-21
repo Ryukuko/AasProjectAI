@@ -35,3 +35,7 @@ $routes->get('admin/users/delete/(:num)', 'Admin\Users::delete/$1');
 
 $routes->get('admin/rules', 'Admin\Rules::index');
 $routes->get('admin/rules/create', 'Admin\Rules::create');
+$routes->post('admin/rules/add', 'Admin\Rules::add');
+$routes->post('admin/rules/update', 'Admin\Rules::update');
+$routes->get('admin/rules/edit/(:num)', 'Admin\Rules::edit/$1');
+$routes->get('admin/rules/delete/(:num)', 'Admin\Rules::delete/$1');
