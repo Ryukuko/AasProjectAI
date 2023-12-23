@@ -45,3 +45,4 @@ $routes->get('admin/rules/delete/(:num)', 'Admin\Rules::delete/$1');
 
 
 $routes->get('user/dashboard', 'User\Dashboard::index');
+$routes->get('user/diagnosa/diagnosaPasien', 'User\Diagnosa::index');

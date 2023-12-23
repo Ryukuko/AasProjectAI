@@ -3,7 +3,7 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
-use App\Models\Admin\DashboardModel;
+use App\Models\User\DashboardModel;
 use App\Libraries\Jwt;
 
 

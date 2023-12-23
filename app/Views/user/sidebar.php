@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height:100%; overflow-y:auto;">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
       <img src="<?php echo base_url('asset/dist');?>/img/sikarpar.svg" alt=" Sirkapar Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -29,7 +29,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=base_url().'user/diagnosa'?>" class="nav-link">
+            <a href="<?=base_url().'user/diagnosa/diagnosaPasien'?>" class="nav-link">
               <i class="fa-solid fa-stethoscope"></i>
               <p>Diagnosa</p>
             </a>

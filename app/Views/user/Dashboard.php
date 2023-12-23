@@ -20,7 +20,8 @@
     <script src=""></script>
 </head>
 <body class="hold-transition sidebar-mini">
-    <?php 
+  <div class="wrapper">
+  <?php 
     echo view('user/sidebar');
     ?>
     <div class="content-wrapper">
@@ -56,7 +57,7 @@
                 <div class="icon">
                   <i class="fa-solid fa-stethoscope"></i>
                 </div>
-                <a href="<?=base_url().'user/diagnosa'?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?=base_url().'user/diagnosa/diagnosaPasien'?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
           </div>
           <div class="col-lg-3 col-6">
@@ -79,7 +80,7 @@
                   <h3 class="card-title">Saluran Pernafasan Manusia</h3>
                 </div>
                 <div class="card-body text-center">
-                  <img src="dist/img/saluran pernafasan.png" alt="Saluran Pernafasan Manusia" class="img-fluid" style="height: 400px; width: 450px;">
+                  <img src="<?php echo base_url('asset/dist');?>/img/saluran pernafasan.png" alt="Saluran Pernafasan Manusia" class="img-fluid" style="height: 400px; width: 450px;">
                   <div style="text-align: left; margin-top: 10px; padding-left:10px;margin-left:10px;" >
                     <p><h4>Organ Saluran Pernafasan pada Manusia terdiri dari :</h4></p>                   
                     <p><h5><b>1. Hidung</b></h5></p>  
@@ -115,5 +116,6 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+</div>
 </body>
 </html>
