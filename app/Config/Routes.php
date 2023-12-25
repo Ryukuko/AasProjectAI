@@ -5,6 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+
+$routes->get('/', 'TestController::index');
+$routes->post('/', 'TestController::index');
+
 $routes->get('admin/login', 'Admin\Login::index');
 
 $routes->post('admin/authentication/login', 'Admin\Authentication::login');
