@@ -62,4 +62,6 @@ $routes->get('user/profile', 'User\Profile::index');
 $routes->get('user/profile/edit', 'User\Profile::editProfile');
 $routes->post('user/profile/editPassword', 'User\Profile::ganti_password_aksi');
 
+$routes->post('user/diagnosa/hitungCf','User\Diagnosa::hitungCf');
+
 

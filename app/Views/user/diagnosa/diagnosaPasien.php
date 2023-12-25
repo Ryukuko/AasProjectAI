@@ -55,44 +55,48 @@
 
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <form action="<?= base_url().'user/diagnosa/diagnosaPasien/create';?>" method="POST">
-                     <table class="table table-hover text-nowrap">
-                        <thead>
-                          <tr>
-                            <th>No</th>
-                            <th>Nama Gejala</th>
-                            <th>Tingkat Kepastian</th>
-                            <th>Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($gejala as $g) :?>
-                          <tr>
-                            <td><?= $g['id'];?></td>
-                            <td><?= $g['nama_gejala'];?></td>
-                            <td>
-                              <select class="form-select" name="<?= $g['id'];?>">
-                                <option value="0">Sangat Tidak Yakin</option>
-                                <option value="0.4">Tidak Yakin</option>
-                                <option value="0.6">Ragu Ragu</option>
-                                <option value="0.8">Yakin</option>
-                                <option value="1">Sangat Yakin</option>
-                              </select>
-                          </td>
-                          <td><input type="checkbox" name="gejala[]" value="<?= $g['id'];?>"></td>
-                        </tr>
-                        <?php endforeach;?>
-                    </tbody>
-                </table>
-                <td><button type="submit">Add</button></td>
-                </form>
-              </div>
+
+                <form action="<?= base_url().'user/diagnosa/hitungCf';?>" method="POST">
+                    <div class="card-body table-responsive p-0">
+                         <table class="table table-hover text-nowrap">
+                            <thead>
+                              <tr>
+                                <th>No</th>
+                                <th>Nama Gejala</th>
+                                <th>Tingkat Kepastian</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($gejala as $key => $value) { ?>
+                                <tr>
+                                    <td>
+                                        <?=$key+1?>
+                                    </td>
+                                    <td>
+                                        <?= $value['nama_gejala'] ?>
+                                    </td>
+                                    <td>
+                                        <select id="gejala" name="<?= $key ?>" value="">
+                                            <option value="<?= $value['id'] ?>|0">Sangat Tidak Yakin</option>
+                                            <option value="<?= $value['id'] ?>|0.4">Tidak Yakin</option>
+                                            <option value="<?= $value['id'] ?>|0.6">Ragu-ragu</option>
+                                            <option value="<?= $value['id'] ?>|0.8">Yakin</option>
+                                            <option value="<?= $value['id'] ?>|1">Sangat Yakin</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-success float-left">
+                    </div>
+            </form>
+
               <!-- /.card-body -->
             </div>
-            <div class="card-footer">
-                <a href="<?=base_url().'user/dashboard'?>" class="btn btn-primary" >Kembali</a>
-            </div>
+
 
             <!-- /.card -->
           </div>
