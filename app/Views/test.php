@@ -25,31 +25,31 @@ if (isset($_POST[0])) {
     $query = $dbku->table('rule');
     $results = $query->get()->getResultArray();
     echo "<br>";
-    $dataArrayCfPakarKaliCfUser = [];
+    $dataArrayDenganCfPakarKaliCfUser = [];
     foreach ($results as $row) {
-        //menghitung cf gejala sekalian di buat array baru dengan nama $dataArrayCfPakarKaliCfUser
+        //menghitung cf gejala sekalian di buat array baru dengan nama $dataArrayDenganCfPakarKaliCfUser
         for ($i = 0; $i < count($cf_user); $i++) {
             if ($row['gejala_id'] == $cf_user[$i][0]) {
-                $dataArrayCfPakarKaliCfUser[] = [$row['penyakit_id'], $row['gejala_id'], $row['cf_pakar'] * $cf_user[$i][1]];
+                $dataArrayDenganCfPakarKaliCfUser[] = [$row['penyakit_id'], $row['gejala_id'], $row['cf_pakar'] * $cf_user[$i][1]];
                 break;
             }
         }
         //dimensi 2 : 0 id penyakit , 1 id gejala , 2 cf user * cf pakar (cf gejala)
     }
 
-    // test print array isian $dataArrayCfPakarKaliCfUser
-    for ($i = 0; $i < count($dataArrayCfPakarKaliCfUser); $i++) {
-        echo "[" . $dataArrayCfPakarKaliCfUser[$i][0] . "," . $dataArrayCfPakarKaliCfUser[$i][1] . "," . $dataArrayCfPakarKaliCfUser[$i][2] . "]";
+    // test print array isian $dataArrayDenganCfPakarKaliCfUser
+    for ($i = 0; $i < count($dataArrayDenganCfPakarKaliCfUser); $i++) {
+        echo "[" . $dataArrayDenganCfPakarKaliCfUser[$i][0] . "," . $dataArrayDenganCfPakarKaliCfUser[$i][1] . "," . $dataArrayDenganCfPakarKaliCfUser[$i][2] . "]";
     }
     echo "<br>";
 
-    function memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayCfPakarKaliCfUser, $idPenyakit)
+    function memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayDenganCfPakarKaliCfUser, $idPenyakit)
     {
         $Penyakit = [];
-        for ($i = 0; $i < count($dataArrayCfPakarKaliCfUser); $i++) {
+        for ($i = 0; $i < count($dataArrayDenganCfPakarKaliCfUser); $i++) {
             //jika bagian id penyakit sama dengan $idPenyakit diinput maka kita jadikan satu
-            if ($dataArrayCfPakarKaliCfUser[$i][0] == $idPenyakit) {
-                $Penyakit[] = [$idPenyakit,$dataArrayCfPakarKaliCfUser[$i][1],$dataArrayCfPakarKaliCfUser[$i][2]];
+            if ($dataArrayDenganCfPakarKaliCfUser[$i][0] == $idPenyakit) {
+                $Penyakit[] = [$idPenyakit,$dataArrayDenganCfPakarKaliCfUser[$i][1],$dataArrayDenganCfPakarKaliCfUser[$i][2]];
             }
         }
         return $Penyakit;
@@ -97,29 +97,29 @@ if (isset($_POST[0])) {
 
 
     echo "<br>";
-    $bronkitisData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayCfPakarKaliCfUser,1);
+    $bronkitisData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayDenganCfPakarKaliCfUser,1);
     $bronkitisAll=menghitungPresentaseMenggunakanRumusCFVer2($bronkitisData);
     echo $bronkitisAll['presentase'];
     var_dump($bronkitisAll['gejala']);
     echo $bronkitisAll['id_penyakit'];
     echo "<br>";
 
-    $laringitisData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayCfPakarKaliCfUser,2);
+    $laringitisData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayDenganCfPakarKaliCfUser,2);
     $laringitisPresentase=menghitungPresentaseMenggunakanRumusCF($laringitisData);
     echo $laringitisPresentase;
     echo "<br>";
 
-    $tonsilitisData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayCfPakarKaliCfUser,3);
+    $tonsilitisData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayDenganCfPakarKaliCfUser,3);
     $tonsilitisPresentase=menghitungPresentaseMenggunakanRumusCF($tonsilitisData);
     echo $tonsilitisPresentase;
     echo "<br>";
 
-    $tuberkolosisData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayCfPakarKaliCfUser,4);
+    $tuberkolosisData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayDenganCfPakarKaliCfUser,4);
     $tuberkolosisPresentase=menghitungPresentaseMenggunakanRumusCF($tuberkolosisData);
     echo $tuberkolosisPresentase;
     echo "<br>";
 
-    $pneumoniaData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayCfPakarKaliCfUser,5);
+    $pneumoniaData=memasukkanDataArrayCfPakarKaliCfUserKePenyakitSpesifik($dataArrayDenganCfPakarKaliCfUser,5);
     $pneumoniaPresentase=menghitungPresentaseMenggunakanRumusCF($pneumoniaData);
     echo $pneumoniaPresentase;
     echo "<br>";

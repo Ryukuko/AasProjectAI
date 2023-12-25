@@ -20,7 +20,7 @@ class Login extends BaseController
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
         //validasi inputan
-        if ($username !='' and $password != ''){
+        if ($username !='' and $password != '' and isset($this->authModel->getPasswordUser($username)['password'])){
             if(hash('sha256',$password) == $this->authModel->getPasswordUser($username)['password']){
                 $data = array(
                     'username' => $username,

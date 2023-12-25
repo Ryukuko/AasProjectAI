@@ -49,6 +49,8 @@ $routes->get('admin/rules/delete/(:num)', 'Admin\Rules::delete/$1');
 
 
 $routes->get('user/dashboard', 'User\Dashboard::index');
+$routes->get('user/riwayat', 'User\HistoryDiagnosa::index');
+
 $routes->get('user/diagnosa/diagnosaPasien', 'User\Diagnosa::index');
 $routes->post('user/diagnosa/diagnosaPasien/create', 'User\Diagnosa::hitungCf');
 $routes->get('user/Auth/login', 'User\Login::login');
