@@ -56,7 +56,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
-                <form action="" method="POST">
+                <form action="<?= base_url().'user/diagnosa/diagnosaPasien/create';?>" method="POST">
                      <table class="table table-hover text-nowrap">
                         <thead>
                           <tr>

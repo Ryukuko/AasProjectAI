@@ -46,3 +46,14 @@ $routes->get('admin/rules/delete/(:num)', 'Admin\Rules::delete/$1');
 
 $routes->get('user/dashboard', 'User\Dashboard::index');
 $routes->get('user/diagnosa/diagnosaPasien', 'User\Diagnosa::index');
+$routes->post('user/diagnosa/diagnosaPasien/create', 'User\Diagnosa::hitungCf');
+$routes->get('user/Auth/login', 'User\Login::login');
+$routes->get('user/Auth/register', 'User\Register::register');
+$routes->post('user/Auth/register/create', 'User\Register::proses_register');
+$routes->post('user/Auth/login/proses', 'User\Login::proses_login');
+$routes->get('user/Auth/logout', 'User\login::Logout');
+$routes->get('user/profile', 'User\Profile::index');
+$routes->get('user/profile/edit', 'User\Profile::editProfile');
+$routes->post('user/profile/editPassword', 'User\Profile::ganti_password_aksi');
+
+

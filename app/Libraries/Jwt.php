@@ -21,6 +21,7 @@ class Jwt
             'exp' => time() + $this->expire,
             'data' => $data,
         ];
+        var_dump($payload);
         return JWTLib::encode($payload, $this->secretKey, $this->algorithm);
     }
 
@@ -31,6 +32,24 @@ class Jwt
                 $decoded = JWTLib::decode($token, new Key($this->secretKey, $this->algorithm));
                 $decodedData = json_decode(base64_decode(explode('.', $token)[1]))->data->role;
                 if ($decodedData !== "admin") { //khusus jwt untuk admin
+                    return false;
+                }
+                if ($decoded) {
+                    return true;
+                }
+            } catch (\Exception $e) {
+                return false;
+            }
+        }
+    }
+    public function decodeUser($token)
+    {
+        if ($token) {
+            try {
+                $decoded = JWTLib::decode($token, new Key($this->secretKey, $this->algorithm));
+                $decodedData = json_decode(base64_decode(explode('.', $token)[1]))->data;
+                //  var_dump($decodedData);
+                if ($decodedData->role !== "user") { //khusus jwt untuk user
                     return false;
                 }
                 if ($decoded) {

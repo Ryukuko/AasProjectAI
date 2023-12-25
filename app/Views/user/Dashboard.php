@@ -90,7 +90,7 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <a href="<?=base_url().'user/diagnosa'?>" class="btn btn-primary float-right" >Mulai Diagnosa!!</a>
+                  <a href="<?=base_url().'user/diagnosa/diagnosaPasien'?>" class="btn btn-primary float-right" >Mulai Diagnosa!!</a>
                 </div>
             </div>
         </section>
