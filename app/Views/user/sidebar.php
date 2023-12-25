@@ -12,7 +12,7 @@
           <img src="<?php echo base_url('asset/dist');?>/img/1261848 (2).jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="<?= base_url().'user/profile';?>" class="d-block"></a>
+            <a href="<?= base_url().'user/profile';?>" class="d-block"><?php echo $username?></a>
         </div>
       </div>
 

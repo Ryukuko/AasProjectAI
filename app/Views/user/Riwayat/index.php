@@ -19,9 +19,9 @@
     <script src=""></script>
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="warpper">
+    <div class="wrapper">
     <?php echo view('user/sidebar');?>
-        <div class="content-wrapper">
+    <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
