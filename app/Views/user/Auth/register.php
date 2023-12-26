@@ -35,7 +35,7 @@
             </div>
         <?php } ?>
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Register Account SIKARPAR</p>
+            <p class="login-box-msg">Register SIKARPAR Account</p>
             <form action="<?= base_url().'user/Auth/register/create';?>" method="post">
         <div class="input-group mb-3">
           <input type="text"  name="username" class="form-control" placeholder="Username">
@@ -60,14 +60,17 @@
               <span class="fas fa-lock"></span>
             </div>
           </div>
+
         </div>
+
         <div class="row">
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
           </div>
         </div>
       </form>
-      <a href="<?= base_url().'user/Auth/login';?>" class="text-center">I already have a account</a>
+            <p style="color: black; margin-bottom: 10px;margin-top: 10px; text-align: center">Already have an account? <a href="<?= base_url().'user/Auth/login';?>">Sign In</a></p>
+
     </div>
   </div>
 </div>

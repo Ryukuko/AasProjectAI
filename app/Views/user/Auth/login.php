@@ -35,7 +35,7 @@
             </div>
         <?php } ?>
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in for session Expert System</p>
+            <p class="login-box-msg">Sign in for expert system session</p>
 
             <form action="<?=base_url().'user/Auth/login/proses';?>" method="post">
                 <div class="input-group mb-3">
@@ -56,14 +56,12 @@
 
                         </p>
                     </div>
-                    <p class="mb-0">
-                    <a href="<?= base_url().'user/Auth/register'?>" class="text-center">Register a New Account</a>
-                  </p>
-                    <div class="col-5">
+                    <div class="col-12">
                         <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                     </div>
                 </div>
             </form>
+            <p style="color: black;margin-bottom: 10px;margin-top: 10px; text-align: center">Don't have an account yet? <a href="<?= base_url().'user/Auth/register';?>">Sign Up</a></p>
         </div>
     </div>
 </div>
