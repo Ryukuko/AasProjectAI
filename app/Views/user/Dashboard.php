@@ -22,8 +22,28 @@
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-
+                <div style="display: flex">
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-danger"><div class="inner">
+                                <h3>ㅤ</h3>
+                                <p>Diagnosa</p>
+                            </div>
+                            <div class="icon"> <i class="fas fa-user-md"></i> </div>
+                            <a href="<?=base_url().'user/diagnosa/diagnosaPasien'?>" class="small-box-footer">More
+                                info <i class="fas fa-arrow-circle-right"></i></a> </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-green"><div class="inner">
+                                <h3>ㅤ</h3>
+                                <p>Riwayat Diagnosa</p>
+                            </div>
+                            <div class="icon"> <i class="fas fa-history"></i> </div>
+                            <a href="<?=base_url().'user/riwayat'?>" class="small-box-footer">More
+                                info <i class="fas fa-arrow-circle-right"></i></a> </div>
+                    </div>
+                </div>
                 <section class="content">
+
                     <div class="card">
                         <div class="card-header">
                             <h3 style="font-weight: bold" class="card-title">Alat Pernafasan Manusia</h3>
