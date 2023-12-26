@@ -15,6 +15,7 @@ class Dashboard extends BaseController
     public function __construct()
     {
         $this->jwt = new Jwt();
+//        var_dump($_COOKIE['token']);
         if (isset($_COOKIE['token'])) {
             if ($this->jwt->decodeAdmin($_COOKIE['token']) == false) {
                 session()->setFlashdata('errors', 'Silahkan login terlebih dahulu.');

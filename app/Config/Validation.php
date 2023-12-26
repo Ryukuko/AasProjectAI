@@ -40,7 +40,16 @@ class Validation extends BaseConfig
         'list'   => 'CodeIgniter\Validation\Views\list',
         'single' => 'CodeIgniter\Validation\Views\single',
     ];
+    public $authregister = [
+        'username' =>'required|string|is_unique[user.username]|min_length[3]|max_length[35]',
+        'password' =>'required|string|min_length[8]|max_length[35]',
+        'confirm_password' =>'required|string|matches[password]|min_length[8]|max_length[35]',
+    ];
 
+    public $gantiPassword = [
+        'password' =>'required|string|min_length[8]|max_length[35]',
+        'confirm_password' =>'required|string|matches[password]|min_length[8]|max_length[35]',
+    ];
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
