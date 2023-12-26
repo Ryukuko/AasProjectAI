@@ -20,8 +20,8 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-      <h6 class="nav-link" style="color:white;">MENU PASIEN</h6>
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+         <li class="nav-header">MENU PENGGUNA</li>
           <li class="nav-item">
             <a href="<?=base_url().'user/dashboard'?>" class="nav-link">
               <i class="fa-solid fa-house"></i>
@@ -41,8 +41,8 @@
             </a>
           </li>
         </ul>
-        <h6 class="nav-link" style="color:white;">ACCOUNT</h6>
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-header">ACCOUNT</li>
           <li class="nav-item">
             <a href="<?=base_url().'user/Auth/logout'?>" class="nav-link">
               <i class="fa-solid fa-arrow-right-from-bracket fa-sm" style="color: #de1717;"></i>
@@ -55,6 +55,6 @@
       </nav>
       <!-- /.sidebar-menu -->
     </div>
-    
+
     <!-- /.sidebar -->
   </aside>

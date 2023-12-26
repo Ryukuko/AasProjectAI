@@ -1,28 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagnosa Pasien</title>
-    <style type="text/css" id="debugbar_dynamic_style"></style>
-    <link rel="stylesheet" href="<?php echo base_url('asset/dist'); ?>/css/adminlte.min.css">
-    <link rel="stylesheet" href="<?php echo base_url('asset/plugins'); ?>/fontawesome-free/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <script type="text/javascript" id="debugbar_dynamic_script"></script>
-    <script type="text/javascript" id="debugbar_loader" data-time="1585277113" src="<?php echo base_url('asset/plugins/'); ?>/index.php?debugbar"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Poppins&family=Varela&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <script src="https://kit.fontawesome.com/7f732dc1b2.js" crossorigin="anonymous"></script>
-    <script src=""></script>
-</head>
-<body >
-  <div class="wrapper">
-  <?php echo view('user/sidebar')?>
+<?php echo view('user/header');?>
+<?php echo view('user/sidebar');?>
  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -51,7 +28,7 @@
             <div class="card">
               <div class="card-header">
                 
-                <h3 class="card-title"><i class="fa-solid fa-book-medical"></i> Gejala yang dirasakan Pasien</h3>
+                <h3 class="card-title"><i class="fa fa-sticky-note-o"></i> Pilih Gejala Yang Dirasakan</h3>
 
               </div>
               <!-- /.card-header -->
@@ -89,8 +66,8 @@
                         </tbody>
                     </table>
                 </div>
-                    <div class="card-footer">
-                        <input type="submit" class="btn btn-success float-left">
+                    <div class="card-footer" style="overflow: hidden;">
+                        <input type="submit" class="btn btn-primary" style="float: right; width: 100%;">
                     </div>
             </form>
 

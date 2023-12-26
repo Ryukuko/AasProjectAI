@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </form>
-            <p style="color: black;margin-bottom: 10px;margin-top: 10px; text-align: center">Don't have an account yet? <a href="<?= base_url().'user/Auth/register';?>">Sign Up</a></p>
+            <p style="color: black;margin-bottom: 10px;margin-top: 10px; text-align: center">Don't have an account ? <a href="<?= base_url().'user/Auth/register';?>">Sign Up</a></p>
         </div>
     </div>
 </div>

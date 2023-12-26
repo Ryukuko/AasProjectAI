@@ -69,7 +69,7 @@
           </div>
         </div>
       </form>
-            <p style="color: black; margin-bottom: 10px;margin-top: 10px; text-align: center">Already have an account? <a href="<?= base_url().'user/Auth/login';?>">Sign In</a></p>
+            <p style="color: black; margin-bottom: 10px;margin-top: 10px; text-align: center">Already have an account ? <a href="<?= base_url().'user/Auth/login';?>">Sign In</a></p>
 
     </div>
   </div>
