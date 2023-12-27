@@ -1,5 +1,6 @@
 <?php echo view('admin/header'); ?>
-<?php echo view('admin/sidebar'); ?>
+    <?php echo view('admin/sidebar'); ?>
+
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -38,8 +39,8 @@
                                 </div>
                             <?php } ?>
                             <div class="card-body">
-                                <div class="table-responsive" >
-                                    <table class="table table-bordered table-hovered" id="tabel">
+                                <div class="card-body table-responsive p-0" >
+                                    <table class="table table-hover text-nowrap" id="tabel">
                                         <thead>
                                         <tr>
                                             <th>No</th>
@@ -84,4 +85,5 @@
             </div>
         </div>
     </div>
+
 <?php echo view('admin/footer'); ?>

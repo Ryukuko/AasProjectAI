@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="height:100%; overflow-y:auto; position: fixed;">
     <a href="#" class="brand-link">
         <img src="<?php echo base_url('asset/dist');?>/img/sikarpar.svg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">SIKARPAR</span>
@@ -14,6 +14,7 @@
         </div>
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">MENU ADMIN</li>
                 <li class="nav-item">
                     <a href="<?=base_url()."admin/dashboard"?>" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>

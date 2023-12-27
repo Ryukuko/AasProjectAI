@@ -24,18 +24,16 @@
             <div class="container-fluid">
                 <div style="display: flex">
                     <div class="col-lg-3 col-6">
-                        <div class="small-box bg-danger"><div class="inner">
-                                <h3>ㅤ</h3>
-                                <p>Diagnosa</p>
+                        <div class="small-box bg-danger" ><div class="inner" style="height: 100px">
+                                <h5>Diagnosa</h5>
                             </div>
                             <div class="icon"> <i class="fas fa-user-md"></i> </div>
                             <a href="<?=base_url().'user/diagnosa/diagnosaPasien'?>" class="small-box-footer">More
                                 info <i class="fas fa-arrow-circle-right"></i></a> </div>
                     </div>
                     <div class="col-lg-3 col-6">
-                        <div class="small-box bg-green"><div class="inner">
-                                <h3>ㅤ</h3>
-                                <p>Riwayat Diagnosa</p>
+                        <div class="small-box bg-info"><div class="inner" style="height: 100px">
+                                <h5>Riwayat</h5>
                             </div>
                             <div class="icon"> <i class="fas fa-history"></i> </div>
                             <a href="<?=base_url().'user/riwayat'?>" class="small-box-footer">More
@@ -49,8 +47,8 @@
                             <h3 style="font-weight: bold" class="card-title">Alat Pernafasan Manusia</h3>
                         </div>
                         <div class="card-body text-center">
-                            <img src="<?php echo base_url('asset/dist');?>/img/saluran pernafasan.png" alt="Saluran Pernafasan Manusia" class="img-fluid" style="margin-bottom: 50px; height: 400px; width: 450px;">
-                            <div style="text-align: left; margin-top: 10px; padding-left:10px;margin-left:10px;" >
+                            <img src="<?php echo base_url('asset/dist');?>/img/saluran pernafasan.png" alt="Saluran Pernafasan Manusia" class="img-fluid" style="margin-bottom: 50px; height: 330px; width: 450px;">
+                            <div style="text-align: left; padding-left:10px;margin-left:10px;" >
                                 <ul>
                                     <li>
                                         <strong>Hidung:</strong>

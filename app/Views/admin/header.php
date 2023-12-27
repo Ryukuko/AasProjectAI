@@ -1,8 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<?php echo base_url('asset/dist');?>/img/sikarpar.svg" >
     <title>SIKARPAR</title>
     <style type="text/css" id="debugbar_dynamic_style"></style>
@@ -17,6 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="https://kit.fontawesome.com/7f732dc1b2.js" crossorigin="anonymous"></script>
     <script src=""></script>
     <style>
         *{
