@@ -36,17 +36,7 @@
                                         </ul>
                                     </div>
                                 <?php } ?>
-                                <div class="form-group">
-                                    <label for="">Kode Gejala</label>
-                                    <select  style="padding-right: 20px;" name="gejala_id" id="" class="form-control">
-                                        <option value="">Pilih kode gejala</option>
-                                        <?php
-                                        foreach($gejala as $key => $value){
-                                            ?>
-                                            <option value="<?=$value->id?>"><?=$value->kode_gejala?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
+
                                 <div class="form-group">
                                     <label for="" >Kode Penyakit</label>
                                     <select name="penyakit_id" id="" class="form-control">
@@ -54,12 +44,39 @@
                                         <?php
                                         foreach($penyakit as $key => $value){
                                         ?>
-                                        <option value="<?=$value->id?>"><?=$value->kode_penyakit?></option>
+                                        <option value="<?=$value->id?>"><?=$value->kode_penyakit?> - <?=$value->nama_penyakit?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Nilai CF Pakar</label><input type="text" class="form-control" name="cf_pakar" placeholder="Enter Nilai CF Pakar" >
+
+                                <div class="form-group" id="tambahan">
+                                    <div style="display: flex" >
+                                        <div style="display: flex;margin-bottom: 10px" id="clone" class="clone">
+                                            <div style="margin-right: 20px" >
+                                                <label for="">Kode Gejala</label>
+                                                <select  style="padding-right: 20px;" name="gejala_id[0]" id="" class="form-control">
+                                                    <option value="">Pilih kode gejala</option>
+                                                    <?php
+                                                    foreach($gejala as $key => $value){
+                                                        ?>
+                                                        <option value="<?=$value->id?>"><?=$value->kode_gejala?> - <?=$value->nama_gejala?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label for="">Nilai CF Pakar</label>
+                                                <input type="text" class="form-control" name="cf_pakar[0]" placeholder="Enter Nilai CF Pakar" >
+                                            </div>
+                                        </div>
+                                        <div style="display: flex">
+                                            <div style="margin-left: 20px; margin-top: 35px">
+                                                <button id="hapuskan" class="btn-sm btn-danger"> <i class="fa fa-minus"></i> </button>
+                                            </div>
+                                            <div style="margin-left: 5px; margin-top: 35px">
+                                                <button id="tambahkan" class="btn-sm btn-success"> <i class="fa fa-plus"></i> </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
@@ -74,6 +91,28 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        var id = 0;
+        $("#tambahkan").click(function (e) {
+            e.preventDefault();
+            id++;
+            var cloneElement = $("#clone").clone();
+            cloneElement.find('label').remove();
+            cloneElement.removeAttr("value");
+            cloneElement.find('[name="gejala_id[0]"]').attr('name', `gejala_id[${id}]`).val('');
+            cloneElement.find('[name="cf_pakar[0]"]').attr('name', `cf_pakar[${id}]`).val('');
+            $("#tambahan").append(cloneElement);
+        });
+        $("#hapuskan").click(function (e) {
+            e.preventDefault();
+            if ($(".clone").length > 1) {
+                id--;
+                $(".clone:last").remove();
+            }
+        });
+    });
+</script>
 <?php echo view('admin/footer'); ?>
 
 
