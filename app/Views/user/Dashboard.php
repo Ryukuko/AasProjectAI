@@ -20,7 +20,7 @@
         <!-- /.content-header -->
 
         <!-- Main content -->
-        <div class="content">
+        <div class="con]tent">
             <div class="container-fluid">
                 <div style="display: flex">
                     <div class="col-lg-3 col-6">

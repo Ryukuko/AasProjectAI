@@ -6,8 +6,8 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', 'TestController::index');
-$routes->post('/', 'TestController::index');
+$routes->get('/', 'landingPage::index');
+// $routes->post('/', 'TestController::index');
 
 $routes->get('admin/login', 'Admin\Login::index');
 
@@ -50,6 +50,7 @@ $routes->get('admin/rules/delete/(:num)', 'Admin\Rules::delete/$1');
 
 $routes->get('user/dashboard', 'User\Dashboard::index');
 $routes->get('user/riwayat', 'User\HistoryDiagnosa::index');
+$routes->get('user/hasil/diagnosa', 'User\HistoryDiagnosa::index');
 
 $routes->get('user/diagnosa/diagnosaPasien', 'User\Diagnosa::index');
 $routes->post('user/diagnosa/diagnosaPasien/create', 'User\Diagnosa::hitungCf');
@@ -63,5 +64,8 @@ $routes->get('user/profile/edit', 'User\Profile::editProfile');
 $routes->post('user/profile/editPassword', 'User\Profile::ganti_password_aksi');
 
 $routes->post('user/diagnosa/hitungCf','User\Diagnosa::hitungCf');
+
+
+
 
 
