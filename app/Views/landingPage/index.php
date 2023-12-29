@@ -22,14 +22,17 @@
       .custom-btn{
         width:100%;
       }
+      *{
+          font-family: Poppins;
+      }
     </style>
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white" style="position: fixed; width: 100%">
     <div class="container">
-      <a href="#sikarpar" class="navbar-brand">
+      <a href="#apa" class="navbar-brand">
       <img src="<?php echo base_url('asset/dist');?>/img/sikarpar.svg" alt=" Sirkapar Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">SIKARPAR</span>
       </a>
@@ -41,8 +44,10 @@
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="" class="nav-link">Home</a>
+          <li class="nav-item" style="display: flex;">
+              <a href="#apa2" class="nav-link">Organ Paru-paru</a>
+            <a href="#apa3" class="nav-link">Penyakit Paru-paru</a>
+              <a href="#apa4" class="nav-link">Mulai Diagnosa</a>
           </li>
         </ul>
       </div>
@@ -57,21 +62,43 @@
       <div class="container">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">SISTEM PAKAR PARU - PARU</h1>
+            <h1 class="m-0 text-dark">Selamat datang di SIKARPAR</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+      <!-- /.content-header -->
 
+      <!-- Main content -->
+      <div class="content" id="apa">
+          <div class="container">
+              <!-- Penjelasan Sistem -->
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="card card-primary card-outline">
+                          <div class="card-header">
+                              <h5 class="card-title m-0"><b>Apa itu SIKARPAR?</b></h5>
+                          </div>
+                          <div class="card-body">
+                              <p class="card-text">SIKARPAR adalah sistem pakar yang dirancang untuk membantu
+                                  mendiagnosis penyakit pada organ paru-paru. Sistem ini memberikan informasi
+                                  tentang pengertian paru-paru dan beberapa penyakit yang dapat menyerangnya.
+                                  Jika Anda mengalami gejala tertentu, SIKARPAR dapat membantu Anda menentukan
+                                  seberapa besar kemungkinan Anda terkena penyakit pada organ paru-paru.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      </div>
     <!-- Main content -->
-    <div class="content">
+    <div class="content" id="apa2">
       <div class="container">
         <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" >
             <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="card-title m-0"><b>Pengertian Paru - Paru</b></h5>
+              <div class="card-header"  >
+                <h5 class="card-title m-0"><b>Organ Paru - Paru</b></h5>
               </div>
               <div class="card-body">
                 <h6 class="card-title"><b><i></i></b></h6>
@@ -89,17 +116,16 @@
               </div>
             </div> 
           </div>
+
         <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <div class="card-header">
+              <div class="card-header"  id="apa3">
                 <h5 class="card-title m-0"><b>Penyakit yang Menyerang Paru - Paru</b></h5>
               </div>
               <div class="card-body">
                 <h6 class="card-title"><b><i></i></b></h6>
-                <p class="card-text">Sama Halnya dengan organ lainnya, organ paru - paru juga memiliki 
-                  penyakit yang dapat menyerang organ ini.
+                <p class="card-text">Sebagaimana halnya dengan organ tubuh lainnya, organ paru-paru juga rentan terhadap berbagai jenis penyakit yang dapat mempengaruhi fungsinya. Berikut ini merupakan lima penyakit yang menyerang organ paru-paru:
                 </p>
-                <p class="card-text"> Berikut merupakan 5 penyakit yang dapat menyerang organ paru - paru :
                   <ol type="1" >
                     <li><h6 class="card-title"><b>Bronkitis</b></h6></li>
                     <ul>
@@ -205,11 +231,11 @@
                 </p>
                 <!-- <a href="https://www.halodoc.com/kesehatan/paru-paru" class="btn btn-primary">Lebih detail</a> -->
               </div>
-            </div> 
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title m-0"></h5>
-              </div>
+            </div>
+            <div class="card card-primary card-outline">
+                <div class="card-header"  id="apa4">
+                    <h5 class="card-title m-0"><b>Mulai Diagnosa</b></h5>
+                </div>
               <div class="card-body">
                 <p class="card-text">Setelah membaca tentang penyakit - penyakit yang ada pada organ paru-paru. Apakah ada gejala yang anda alami yang sesuai dengan penjelasan diatas?
                   Jika ada Apakah anda ingin mengecheck seberapa besar anda terkena Penyakit pada Organ paru-paru? Jika iya, kami telah membuat sistem untuk menghitung presentase penyakit 
@@ -228,24 +254,18 @@
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2023 - 2099 <a href="#">SIKARPAR</a>.</strong> All rights reserved.
-  </footer>
+      <aside class="control-sidebar control-sidebar-dark">
+          <div class="p-3">
+              <h5>Title</h5>
+              <p>Sidebar content</p>
+          </div>
+      </aside>
+      <footer class="main-footer">
+          <div class="float-right d-none d-sm-inline">
+              Sistem Pakar Diagnosa Penyakit Paru - Paru
+          </div>
+          <strong>Copyright © 2023-2099 <a href="#"> SIKARPAR</a>.</strong> All rights reserved.
+      </footer>
 </div>
 <!-- ./wrapper -->
 
