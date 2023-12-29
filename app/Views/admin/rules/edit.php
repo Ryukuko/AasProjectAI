@@ -37,6 +37,17 @@
                                     </div>
                                 <?php } ?>
                                 <div class="form-group">
+                                    <label for="" >Kode Penyakit</label>
+                                    <select name="penyakit_id" id="" class="form-control" value="<?=$rules['penyakit_id']?>">
+                                        <option value="">Pilih kode penyakit</option>
+                                        <?php
+                                        foreach($penyakit as $key => $value){
+                                            ?>
+                                            <option <?=($value->id==$rules['penyakit_id'])?'selected':''?> value="<?=$value->id?>"><?=$value->kode_penyakit?> - <?=$value->nama_penyakit?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="">Kode Gejala</label>
                                     <input type="hidden" name="id" value="<?=$rules['id']?>">
                                     <select  style="padding-right: 20px;" name="gejala_id" id="" class="form-control">
@@ -44,21 +55,11 @@
                                         <?php
                                         foreach($gejala as $key => $value){
                                             ?>
-                                            <option <?=($value->id==$rules['gejala_id'])?'selected':''?> value="<?=$value->id?>"><?=$value->kode_gejala?></option>
+                                            <option <?=($value->id==$rules['gejala_id'])?'selected':''?> value="<?=$value->id?>"><?=$value->kode_gejala?> - <?=$value->nama_gejala?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label for="" >Kode Penyakit</label>
-                                    <select name="penyakit_id" id="" class="form-control" value="<?=$rules['penyakit_id']?>">
-                                        <option value="">Pilih kode penyakit</option>
-                                        <?php
-                                        foreach($penyakit as $key => $value){
-                                            ?>
-                                            <option <?=($value->id==$rules['penyakit_id'])?'selected':''?> value="<?=$value->id?>"><?=$value->kode_penyakit?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
+
                                 <div class="form-group">
                                     <label for="">Nilai CF Pakar</label><input type="text" class="form-control" name="cf_pakar" value="<?=$rules['cf_pakar']?>" placeholder="Enter Nilai CF Pakar" >
                                 </div>

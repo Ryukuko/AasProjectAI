@@ -77,7 +77,45 @@
     </div>
   </aside>
 
-  <?php echo view('user/footer');?>
+<?php
+$berhasil = session()->getFlashdata('berhasil');
+if(isset($berhasil)){
+?>
+<div class="modal fade" id="successModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-success" style="border: 1px solid white">
+            <div class="modal-header">
+                <h4 class="modal-title">👨🏻‍⚕️ Hasil Diagnosa </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <img style="margin: auto" src="<?= base_url('asset/dist'); ?>/img/success.svg" width="250" height="250" alt="">
+                <br>
+                <h5 style="font-weight: bold"><?= $berhasil['presentase'] ?> Mengalami <?= $berhasil['nama_penyakit'] ?></h5>
+                <br>
+                <h5  style="font-weight: bold"><i class="fa fa-map-pin" aria-hidden="true"></i> Gejala yang anda rasakan terkait penyakit tersebut adalah: </h5>
+                <h5 style="text-align: center"><?= $berhasil['gejala'] ?></h5>
+                <br>
+                <h5 style="font-weight: bold"><i class="fa fa-map-pin" aria-hidden="true"></i> Solusi terkait diagnosa penyakit yang anda dapatkan: </h5>
+                <h5 style="text-align: center"><?= $berhasil['solusi'] ?></h5>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Diagnosa Lagi</button>
+                <a href="<?=base_url().'user/riwayat';?>" type="button" class="btn btn-light">Lihat Riwayat</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#successModal').modal('show');
+    });
+</script>
+<?php } ?>
+<?php echo view('user/footer');?>
+  
 </div>
 </body>
 </html>

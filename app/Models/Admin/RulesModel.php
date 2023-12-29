@@ -24,11 +24,11 @@ class RulesModel extends Model
     }
     public function getAllPenyakit(){
         $koneksi = $this->db->table("penyakit");
-        return $koneksi->select('id, kode_penyakit')->orderBy('id')->get()->getResult();
+        return $koneksi->select('id, kode_penyakit, nama_penyakit')->orderBy('id')->get()->getResult();
     }
     public function getAllGejala(){
         $koneksi = $this->db->table("gejala");
-        return $koneksi->select('id, kode_gejala')->orderBy('id')->get()->getResult();
+        return $koneksi->select('id, kode_gejala, nama_gejala')->orderBy('id')->get()->getResult();
     }
 
     public function insertData($data)

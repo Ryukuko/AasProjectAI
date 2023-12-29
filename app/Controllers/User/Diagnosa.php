@@ -173,7 +173,19 @@ class Diagnosa extends BaseController{
                 "tanggal"=>date("Y-m-d")
             );
             $dbku->table('history')->insert($data);
-            header("Location:".base_url('/user/riwayat'));
+
+            //nyoba native query :v
+            $query = "SELECT nama_penyakit, solusi FROM penyakit WHERE id = ?";
+            $result = $dbku->query($query, [$dataAkhir['id_penyakit']])->getResult();
+
+            $dataBerhasil=array(
+                "presentase" =>$presentaseAkhir."%",
+                "gejala" =>$gejalaYangSudahString,
+                "nama_penyakit"=>$result[0]->nama_penyakit,
+                "solusi"=>$result[0]->solusi,
+            );
+            session()->setFlashdata('berhasil', $dataBerhasil);
+            header("Location:".base_url('/user/diagnosa/diagnosaPasien'));
             exit();
 
         }
