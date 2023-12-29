@@ -31,7 +31,7 @@ class Login extends BaseController
                 setcookie('token', $token, time()+3600, '/', '', false, true);
                 return redirect()->to(base_url('user/dashboard'));
             }else{
-                $this->session->setFlashdata('errors', "Username atau Password Salah.");
+                session()->setFlashdata('errors', "Username atau Password Salah.");
                 return redirect()->to(base_url('/'));
             }
         }else{
