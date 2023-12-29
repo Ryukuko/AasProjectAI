@@ -13,6 +13,22 @@ class GejalaModel extends Model{
             return $this->where('id', $id)->first();
         }
     }
+    public function getGejalaYangPunyaRule()
+    {
+        $gejalaIds = $this->db->table('rule')
+            ->select('gejala_id')
+            ->distinct()
+            ->get()
+            ->getResult();
+        $gejalaIds=array_column($gejalaIds, 'gejala_id');
+
+        $gejalaData = $this->db->table($this->table)
+            ->whereIn('id', $gejalaIds)
+            ->get()
+            ->getResultArray();
+
+        return $gejalaData;
+    }
 }
 
 ?>

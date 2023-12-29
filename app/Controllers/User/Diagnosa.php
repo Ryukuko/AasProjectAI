@@ -35,7 +35,7 @@ class Diagnosa extends BaseController{
         $namaPengguna = [
             'username' => $this->username
         ];
-        $data['gejala'] = $this->gejalaModel->getGejala();
+        $data['gejala'] = $this->gejalaModel->getGejalaYangPunyaRule();
         $viewData = array_merge($data, $namaPengguna);
         echo view('user/diagnosa/diagnosaPasien', $viewData);
     }
