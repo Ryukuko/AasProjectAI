@@ -23,6 +23,31 @@
         *{
             font-family: Poppins;
         }
+        #success{
+            display: none;
+            position: fixed;
+            top:20%;
+            left:10%
+        }
+        #success .title{
+            color: #32ba7c;
+        }
+        .title{
+            font-weight: 500;
+            font-size: 24px;
+            letter-spacing: 0.05em;
+            text-align: center;
+            margin: auto;
+        }
+        .popup-content{
+            /* display: block; */
+             width: 326px;
+             height: 408px;
+             background: white;
+             box-shadow: 4px 4px 70px 10px rgb(0 0 0/11%);
+             border-radius: 25px;
+        }
+
     </style>
 </head>
 <body class="hold-transition sidebar-mini">
