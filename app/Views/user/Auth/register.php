@@ -30,8 +30,13 @@
         <?php
         $errors = session()->getFlashdata('errors');
         if(!empty($errors)){ ?>
-            <div class="alert alert-danger" role="alert" style="margin:10px">
-                <p style="margin-bottom: 0px;text-align: center"><?=$errors?></p>
+            <div class="alert alert-danger"  style="margin:10px"  role="alert">
+                Walaw E! There was an error in the data input :
+                <ul>
+                    <?php foreach ($errors as $error) : ?>
+                        <li style="margin-bottom: 0px;" ><?= esc($error) ?></li>
+                    <?php endforeach ?>
+                </ul>
             </div>
         <?php } ?>
         <div class="card-body login-card-body">

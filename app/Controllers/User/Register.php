@@ -24,7 +24,6 @@ class Register extends BaseController
 
         if ($validation->run($data, 'authregister') == FALSE) {
             session()->setFlashdata('errors', $validation->getErrors());
-            session()->setFlashdata('inputs', $this->request->getPost());
             return redirect()->to('user/Auth/register');
         } else {
             $password = $this->request->getPost('password');

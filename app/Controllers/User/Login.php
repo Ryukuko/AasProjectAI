@@ -32,7 +32,7 @@ class Login extends BaseController
                 return redirect()->to(base_url('user/dashboard'));
             }else{
                 session()->setFlashdata('errors', "Username atau Password Salah.");
-                return redirect()->to(base_url('/'));
+                return redirect()->to(base_url('user/Auth/login'));
             }
         }else{
             session()->setFlashdata("errors", "Username atau Password salah.");
