@@ -26,22 +26,18 @@
                     <div class="col-md-6">
                         <div class="card"style="padding: 20px">
                             <div>
-                                <ul class="nav nav-pills">
-                                    <?php
-                                    $errors = session()->getFlashdata('errors');
-                                    if(!empty($errors)){
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-md-12" style="width: 830px">
-                                             <div class="alert alert-danger">
-                                                Walaw E! Ada kesalahan saat input data, yaitu:
-                                                <ul>
-                                                <?php foreach ($errors as $error) { ?>
-                                                    <li><?php echo esc($error); ?></li>
-                                                <?php } ?>
-                                                </ul>
+                                <?php
+                                $errors = session()->getFlashdata('errors');
+                                if(!empty($errors)){ ?>
+                                    <div class="alert alert-danger" role="alert" >
+                                        Walaw E! There was an error in the data delete :
+                                        <ul>
+                                            <?php foreach ($errors as $error) { ?>
+                                                <li><?php echo esc($error); ?></li>
                                             <?php } ?>
-                                 </ul>
+                                        </ul>
+                                    </div>
+                                <?php } ?>
                                 <form action="<?= base_url().'user/profile/editPassword';?>" method="post">
                                     <div class="form-group row">
                                         <label for="password" class="col-sm-4 col-form-label">Password Baru</label>
