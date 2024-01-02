@@ -35,7 +35,7 @@ class Login extends BaseController
                 return redirect()->to(base_url('user/Auth/login'));
             }
         }else{
-            session()->setFlashdata("errors", "Username atau Password salah.");
+            session()->setFlashdata("errors", "Username atau Password kosong.");
             return redirect()->to(base_url('user/Auth/login'));
         }
     }

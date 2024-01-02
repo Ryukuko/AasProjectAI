@@ -32,11 +32,11 @@ class Authentication extends BaseController
                 setcookie('token', $token, time()+3600, '/', '', false, true);
                 return redirect()->to(base_url('admin/dashboard'));
             }else {
-                    $this->session->setFlashdata('errors', 'Username atau Password salah.');
+                    session()->setFlashdata('errors', 'Username atau Password salah.');
                     return redirect()->to(base_url('/'));
                 }
         } else {
-            session()->setFlashdata('errors', 'Username atau Password salah.');
+            session()->setFlashdata('errors', 'Username atau Password kosong.');
             return redirect()->to(base_url('/admin/login'));
         }
     }
