@@ -61,29 +61,41 @@ class Profile extends BaseController{
         $token = $_COOKIE['token'];
         $username = json_decode(base64_decode(explode('.', $token)[1]))->data->username;
         $id_pengguna = $this->authModel->get_id_by_username($username);
-        var_dump($id_pengguna);
+        $password_pengguna = $this->authModel->getPasswordUser($username)['password'];
+        // var_dump($id_pengguna);
+        $password_lama = $this->request->getPost('password_lama');
+        $password_lama_hash = hash('sha256',$password_lama);
+        // var_dump($password_lama_hash);
         $validation = \Config\Services::validation();
         $data =[
+            'password_lama' => $password_lama_hash,
             'password' => $this->request->getPost('password'),
             'confirm_password' => $this->request->getPost('confirm_password'),
         ];
-        if ($validation->run($data, 'gantiPassword') == FALSE) {
-            session()->setFlashdata('errors', $validation->getErrors());
-            session()->setFlashdata('inputs', $this->request->getPost());
-            return redirect()->to('user/profile/edit');
-        } else {
-            $password = $this->request->getPost('password');
-            $datalagi = [
-                'password' => hash('sha256', $password),
-            ];
-
-            $simpan = $this->authModel->edit_password($id_pengguna,$datalagi);
-
-            if ($simpan) {
-                session()->setFlashdata('success_changePassword', 'Change Password Successfully');
+        if($password_lama !='' and isset($password_pengguna)){
+            if($password_lama_hash == $password_pengguna){
+                if ($validation->run($data, 'gantiPassword') == FALSE) {
+                    session()->setFlashdata('errors', $validation->getErrors());
+                    session()->setFlashdata('inputs', $this->request->getPost());
+                    return redirect()->to('user/profile/edit');
+                } else {
+                        $password = $this->request->getPost('password');
+                        $datalagi = [
+                            'password' => hash('sha256', $password),
+                        ];
+                        $simpan = $this->authModel->edit_password($id_pengguna,$datalagi);
+                        if ($simpan) {
+                            session()->setFlashdata('berhasil_ganti', 'Change Password Successfully');
+                            return redirect()->to('user/profile/edit');
+                        }                    
+                    }
+                }else{
+                    session()->setFlashdata('password_salah','Maaf Password Lama Anda Salah!');
+                    return redirect()->to('user/profile/edit');
+                }
+            }else{
+                session()->setFlashdata('password_kosong','Maaf Password Lama kosong!');
                 return redirect()->to('user/profile/edit');
-            }
         }
-
     }
 }
